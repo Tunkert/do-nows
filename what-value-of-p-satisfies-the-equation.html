@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Value of p Satisfies the Equation</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 6px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+
+        .version-number {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="pb"></div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="problem">
+        <div class="version-number"></div>
+        <p></p>
+    </div>
+    <div class="pb"></div>
+    <div class="solutions">
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<script>
+    for (let i = 0; i < 8; i++) {
+        const problemParagraph = document.querySelectorAll('.problem p')[i];
+        const versionNumber = i + 1;
+        const versionNumberContainer = document.querySelectorAll('.problem .version-number')[i];
+        versionNumberContainer.textContent = `V ${versionNumber}`;
+        const c1 = Math.floor(Math.random() * 5) + 5;
+        const c2 = Math.floor(Math.random() * 50) + 100;
+        const valP = Math.floor(Math.random() * 10) + 10;
+        const result = c1 * valP + c2;
+        problemParagraph.textContent = `For what value of p does ${c1}p + ${c2} = ${result}? (¿Para qué valor de p ${c1}p + ${c2} = ${result}?)`;
+        const solutionItem = document.querySelectorAll('.solutions ol li')[i];
+        solutionItem.textContent = `${result}`;
+    }
+</script>
+</body>
+</html>

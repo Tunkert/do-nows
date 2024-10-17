@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When ax + b = c, what is ...</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .problem ul li {
+            list-style: upper-alpha;
+        }
+
+        .question {
+            margin-top: 25px;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let correctSolution = (x, d) => {
+            return `${x + d}`;
+        }
+
+        let incorrectSolution = (x, d) => {
+            return `${x - d}`;
+        }
+
+        let incorrectSolutionTwo = (x, d) => {
+            return `${x}`;
+        }
+
+        let incorrectSolutionThree = (x, d) => {
+            return `${x * d}`;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const problemQuestion = document.querySelectorAll('.problem .question')[i];
+            let a = Math.floor(Math.random() * 8) + 2;
+            let b = (Math.floor(Math.random() * 8) + 2) * a;
+            let x = b / a * Math.floor(Math.random() * 10);
+            let c = a * x + b;
+            let d = Math.floor(Math.random() * 8) + 2;
+            problemQuestion.innerHTML = `<strong>V${i + 1}</strong>: If ${a}x + ${b} = ${c}, what does x + ${d} equal?`;
+            let solutionOne = document.querySelectorAll('.problem li')[4 * i];
+            let solutionTwo = document.querySelectorAll('.problem li')[4 * i + 1];
+            let solutionThree = document.querySelectorAll('.problem li')[4 * i + 2];
+            let solutionFour = document.querySelectorAll('.problem li')[4 * i + 3];
+            let problemOrder = Math.floor(Math.random() * 4);
+            if (problemOrder === 0) {
+                solutionOne.textContent = `${correctSolution(x, d)}`;
+                solutionTwo.textContent = `${incorrectSolution(x, d)}`;
+                solutionThree.textContent = `${incorrectSolutionTwo(x, d)}`;
+                solutionFour.textContent = `${incorrectSolutionThree(x, d)}`;
+            } else if (problemOrder === 1) {
+                solutionTwo.textContent = `${correctSolution(x, d)}`;
+                solutionOne.textContent = `${incorrectSolution(x, d)}`;
+                solutionThree.textContent = `${incorrectSolutionTwo(x, d)}`;
+                solutionFour.textContent = `${incorrectSolutionThree(x, d)}`;
+            } else if (problemOrder === 2) {
+                solutionThree.textContent = `${correctSolution(x, d)}`;
+                solutionTwo.textContent = `${incorrectSolution(x, d)}`;
+                solutionOne.textContent = `${incorrectSolutionTwo(x, d)}`;
+                solutionFour.textContent = `${incorrectSolutionThree(x, d)}`;
+            } else {
+                solutionFour.textContent = `${correctSolution(x, d)}`;
+                solutionThree.textContent = `${incorrectSolution(x, d)}`;
+                solutionTwo.textContent = `${incorrectSolutionTwo(x, d)}`;
+                solutionOne.textContent = `${incorrectSolutionThree(x, d)}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

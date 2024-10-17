@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Step Equations Infinity Do Now</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted goldenrod;
+        }
+
+        .version-number {
+            margin-top: 25px;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <div class="version-number"></div>
+            <p class="instructions">Solve for x:</p>
+            <p class="equation"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        for(let i = 0; i < 8; i++) {
+            let versionNumber = i + 1;
+            let versionNumberContainer = document.querySelectorAll('.version-number')[i];
+            versionNumberContainer.innerHTML = `<b>v${versionNumber}</b>`;
+
+            // create the equation for each problem
+            // ax +- b = c
+            let a = Math.floor(Math.random() * 8) + 2;
+            let b = Math.floor(Math.random() * 8) + 2;
+            let xValue = Math.floor(Math.random() * 8) + 2;
+            let sign = Math.floor(Math.random() * 2);
+            let c;
+            let equationContainer = document.querySelectorAll('.equation')[i];
+            if (sign === 0) {
+                c = a * xValue - b;
+                equationContainer.innerHTML = `${a}x &minus; ${b} = ${c}`;
+            } else {
+                c = a * xValue + b;
+                equationContainer.innerHTML = `${a}x + ${b} = ${c}`;
+            }
+            
+            // create solution container and put solutions in it.
+            let solutionContainer = document.querySelectorAll('.solutions ol li')[i];
+            solutionContainer.textContent = `${xValue}`;
+        }
+    </script>
+</body>
+</html>

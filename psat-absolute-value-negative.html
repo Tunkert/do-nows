@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Value Negative</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .equation {
+            text-align: center;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="question"></p>
+        </div>
+    </div>
+    <script>
+        for (let i = 0; i < 8; i++) {
+            const question = document.querySelectorAll('.problem .question')[i];
+            const equation = document.querySelectorAll('.problem .equation')[i];
+            let constantOne = (Math.floor(Math.random() * 8) + 2) * 10 + Math.floor(Math.random() * 8);
+            let constantTwo = (Math.floor(Math.random() * 8) + 2) * 10 + Math.floor(Math.random() * 8);
+            while (constantOne >= constantTwo) {
+                constantOne = (Math.floor(Math.random() * 8) + 2) * 10 + Math.floor(Math.random() * 8);
+                constantTwo = (Math.floor(Math.random() * 8) + 2) * 10 + Math.floor(Math.random() * 8);
+            }
+            question.innerHTML = `<strong>V ${i + 1}</strong>: What is the negative solution to the given equation?`;
+            equation.innerHTML = `|x &minus; ${constantOne}| = ${constantTwo}`;
+        }
+    </script>
+</body>
+
+</html>

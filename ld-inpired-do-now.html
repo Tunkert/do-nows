@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.D. Inspired Do Now </title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        for (let i  = 0; i  < 8; i ++) {
+            const problemInstructions = document.querySelectorAll('.problem .instructions')[i];
+            const xValue = Math.floor(Math.random() * 8) + 2;
+            const coeff1 = Math.floor(Math.random() * 5) + 2;
+            const constantOne = Math.floor(Math.random() * 5) + 2;
+            problemInstructions.textContent = `If x = ${xValue}, what is the value of ${coeff1}x + ${constantOne}?`;
+            const solution = coeff1 * xValue + constantOne;
+            const solutionContainer = document.querySelectorAll('.solutions ol li')[i];
+            solutionContainer.textContent = `${solution}`;
+        }
+    </script>
+</body>
+</html>

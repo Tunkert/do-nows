@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Fraction</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+
+        .equation {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .possible-solutions li {
+            list-style: upper-alpha;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instruction"></p>
+            <ul class="possible-solutions">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        let correctSolution = (denominator, rightHandValue) => {
+            return Math.pow(denominator * rightHandValue, 0.5);
+        }
+
+        let incorrectSolutionOne = (denominator, rightHandValue) => {
+            return Math.pow(denominator, 0.5);
+        }
+
+        let incorrectSolutionTwo = (denominator, rightHandValue) => {
+            return Math.pow(rightHandValue, 0.5);
+        }
+
+        let incorrectSolutionThree = (denominator, rightHandValue) => {
+            return denominator * rightHandValue;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            let denominator = Math.floor(Math.random() * 5) + 5;
+            denominator *= denominator;
+            let rightHandValue = Math.floor(Math.random() * 5) + 5;
+            rightHandValue *= rightHandValue;
+            let question = document.querySelectorAll('.problem .equation')[i];
+            question.textContent = `\\( \\frac{x^2}{${denominator}} = ${rightHandValue} \\)`;
+            let solutionContainer = document.querySelectorAll('.solutions ol li')[i];
+            let theCorrectSolution = correctSolution(denominator, rightHandValue);
+            let theFirstIncorrectSolution = incorrectSolutionOne(denominator, rightHandValue);
+            let theSecondIncorrectSolution = incorrectSolutionTwo(denominator, rightHandValue);
+            let theThirdIncorrectSolution = incorrectSolutionThree(denominator, rightHandValue);
+            
+            let instruction = document.querySelectorAll('.instruction')[i];
+            instruction.innerHTML = `<strong>v${i + 1}</strong> What is a solution to the given equation?`;
+            let possibleSolutionOne = document.querySelectorAll('.possible-solutions li')[4 * i];
+            let possibleSolutionTwo = document.querySelectorAll('.possible-solutions li')[4 * i + 1];
+            let possibleSolutionThree = document.querySelectorAll('.possible-solutions li')[4 * i + 2];
+            let possibleSolutionFour = document.querySelectorAll('.possible-solutions li')[4 * i + 3];
+            let solutionOrder = Math.floor(Math.random() * 4);
+            if (solutionOrder === 0) {
+                solutionContainer.textContent = `A`;
+                possibleSolutionOne.textContent = `${theCorrectSolution}`;
+                possibleSolutionTwo.textContent = `${theFirstIncorrectSolution}`;
+                possibleSolutionThree.textContent = `${theSecondIncorrectSolution}`;
+                possibleSolutionFour.textContent = `${theThirdIncorrectSolution}`;
+            } else if (solutionOrder === 1) {
+                solutionContainer.textContent = `B`;
+                possibleSolutionTwo.textContent = `${theCorrectSolution}`;
+                possibleSolutionOne.textContent = `${theFirstIncorrectSolution}`;
+                possibleSolutionThree.textContent = `${theSecondIncorrectSolution}`;
+                possibleSolutionFour.textContent = `${theThirdIncorrectSolution}`;
+            } else if (solutionOrder === 2) {
+                solutionContainer.textContent = `C`;
+                possibleSolutionThree.textContent = `${theCorrectSolution}`;
+                possibleSolutionTwo.textContent = `${theFirstIncorrectSolution}`;
+                possibleSolutionOne.textContent = `${theSecondIncorrectSolution}`;
+                possibleSolutionFour.textContent = `${theThirdIncorrectSolution}`;
+            } else {
+                solutionContainer.textContent = `D`;
+                possibleSolutionFour.textContent = `${theCorrectSolution}`;
+                possibleSolutionThree.textContent = `${theFirstIncorrectSolution}`;
+                possibleSolutionTwo.textContent = `${theSecondIncorrectSolution}`;
+                possibleSolutionOne.textContent = `${theThirdIncorrectSolution}`;
+            }
+        }
+    </script>
+</body>
+</html>

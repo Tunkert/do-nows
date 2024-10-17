@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Range of a data Set</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+
+        .data-set {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="data-set"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        function findMinimum(numbers) {
+            // Check if the array is empty
+            if (numbers.length === 0) {
+                return undefined; // or throw an error, depending on your preference
+            }
+
+            // Use Math.min() with the spread operator
+            return Math.min(...numbers);
+        }
+
+        function findMaximum(numbers) {
+            // Check if the array is empty
+            if (numbers.length === 0) {
+                return undefined; // or throw an error, depending on your preference
+            }
+
+            // Use Math.min() with the spread operator
+            return Math.max(...numbers);
+        }
+
+        function findRange(min, max) {
+            return max - min;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const problemDataSet = document.querySelectorAll('.problem .data-set')[i];
+            let dataSet = [];
+            const dataSetLength = Math.floor(Math.random() * 5) + 7;
+            for (let j = 0; j < dataSetLength; j++) {
+                let dataValue = Math.floor(Math.random() * 100) + 120;
+                dataSet.push(dataValue);
+            }
+            let commaSeparatedDataSet = dataSet.join(', ');
+            problemDataSet.textContent = `${commaSeparatedDataSet}`;
+            const problemInstructions = document.querySelectorAll('.problem .instructions')[i];
+            problemInstructions.innerHTML = `<strong>v${i + 1}</strong>: What is the range of the ${dataSetLength} scores shown?`;
+            let minimum = findMinimum(dataSet);
+            let maximum = findMaximum(dataSet);
+            let range = findRange(minimum, maximum);
+
+            // create solutions
+            const solutionContainer = document.querySelectorAll('.solutions ol li')[i];
+            solutionContainer.textContent = `${range}`;
+        }
+    </script>
+</body>
+
+</html>

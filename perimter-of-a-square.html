@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perimeter of a Square</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="problem">
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        for (let i = 0; i < 8; i++) {
+            const question = document.querySelectorAll('.problem .question')[i];
+            const sideLength = Math.floor(Math.random() * 45) + 10;
+            question.textContent = `Each side of a square has a length of ${sideLength}. What is the perimeter of the square?`;
+            const solutionItem = document.querySelectorAll('.solutions ol li')[i];
+            const theSolution = 4 * sideLength;
+            solutionItem.textContent = `${theSolution}`;
+        }
+    </script>
+</body>
+</html>

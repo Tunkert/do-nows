@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combining Like Terms One</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions">What value of <var>p</var> is the solution to the given equation?</p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        let solution = (a, b, c) => {
+            return c - a - b;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const a = Math.floor(Math.random() * 5) + 8;
+            const b = Math.floor(Math.random() * 5) + 8;
+            const c = Math.floor(Math.random() * 5) + 8;
+            const problemEquation = document.querySelectorAll('.problem .equation')[i];
+            problemEquation.innerHTML = `(p + ${a}) + ${b} = ${c}`;
+            const theSolution = solution(a, b, c);
+            const solutionContainer = document.querySelectorAll('.solutions ol li')[i];
+            solutionContainer.textContent = `${theSolution}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>System of Equations</title>
+	<style type="text/css">
+		.container {
+			margin: 0 0.5in;
+		}
+
+		.problem {
+			min-height: 190px;
+			border-bottom: 7px dotted hotpink;
+		}
+
+		ul {
+			margin-top: 25px;
+		}
+
+		.pb {
+			page-break-after: always;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="pb"></div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="problem">
+		<ul>
+			<li class="equation-one"></li>
+			<li class="equation-two"></li>
+		</ul>
+		<p class="instructions"></p>
+	</div>
+	<div class="pb"></div>
+	<div class="solutions">
+		<h2>Solutions</h2>
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</div>
+<script type="text/javascript">
+	for (let i = 0; i < 8; i++) {
+		const equationOne = document.querySelectorAll('.problem li.equation-one')[i];
+		const equationTwo = document.querySelectorAll('.problem li.equation-two')[i];
+		const xValue = Math.floor(Math.random() * 8) + 2;
+		const xValueMultiplier = Math.floor(Math.random() * 6) + 2;
+		const rightHandValueEquationOne = xValue * xValueMultiplier;
+		equationOne.textContent = `${xValueMultiplier}x = ${rightHandValueEquationOne}`;
+		const rightHandValueEquationTwo = Math.floor(Math.random() * 8) + 2;
+		const yValue = xValueMultiplier * xValue - rightHandValueEquationTwo;
+		equationTwo.innerHTML = `y &minus; ${xValueMultiplier}x = &minus;${rightHandValueEquationTwo}`;
+		const instructions = document.querySelectorAll('.problem p.instructions')[i];
+		instructions.innerHTML = `<strong>V ${i + 1}</strong>: The solution to the given system of equations is (x, y). What is the value of y?`;
+		const solutionItem = document.querySelectorAll('.solutions li')[i];
+		solutionItem.textContent = `${yValue}`;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum of a Quadratic</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <script>
+            let createEquation = (a, c1, c2) => {
+                return `${a}x<sup>2</sup> &minus; ${c1}x + ${c2}`;
+            }
+
+            for (let i = 0; i < 8; i++) {
+                const problemEquation = document.querySelectorAll('.problem .equation')[i];
+                const problemInstructions = document.querySelectorAll('.problem .instructions')[i];
+                const a = Math.floor(Math.random() * 5) + 2;
+                const h = Math.floor(Math.random() * 4) + 2;
+                const k = Math.floor(Math.random() * 4) + 2;
+                const c1 = 2 * a * h;
+                const c2 = a * h * h + a * k;
+                const theEquation = createEquation(a, c1, c2);
+                problemEquation.innerHTML = `<var>f(x)</var> = ${theEquation}`;
+                problemInstructions.innerHTML = `The given equation defines the function <var>f</var>. For what value of <var>x</var> does <var>f(x)</var> reach it's minimum?`;
+                const solutionItem = document.querySelectorAll('.solutions ol li')[i];
+                solutionItem.innerHTML = `<var>x</var> = ${h}`;
+            }
+        </script>
+    </div>
+</body>
+</html>
