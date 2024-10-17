@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Double Infinity Do now 1</title>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      min-height: 200px;
+      border-bottom: 7px dotted hotpink;
+    }
+    
+    .problem {
+      width: 45%;
+    }
+
+    .possible-solutions li {
+      list-style: upper-alpha;
+    }
+
+    .pb {
+      page-break-after: always;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="problem">
+        <p class="equation"></p>
+        <p class="question"></p>
+        <ul class="possible-solutions">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <script>
+    for(let i = 0; i < 8; i++) {
+      const problemOneEquationHolder = document.querySelectorAll('.problem .equation')[2 * i];
+      const problemTwoEquationHolder = document.querySelectorAll('.problem .equation')[2 * i + 1];
+      const squareRoot = Math.floor(Math.random() * 5) + 10;
+      const squared = squareRoot * squareRoot;
+      let constantOne = Math.floor(Math.random() * 86) + 90;
+      while (constantOne >= squared) {
+        constantOne = Math.floor(Math.random() * 86) + 90;
+      }
+      const constantTwo = squared - constantOne;
+      problemOneEquationHolder.textContent = `\\( k^2 - ${constantOne} = ${constantTwo} \\)`;
+      const questionOne = document.querySelectorAll('.problem .question')[2 * i];
+      const questionTwo = document.querySelectorAll('.problem .question')[2 * i + 1];
+      questionOne.textContent = `What is the positive solution to the given equation?`;
+      const incorrectSolutionTwo = constantTwo - constantOne;
+      const incorrectSolutionThree = Math.floor(squared / 2);
+      const solutionHolderOne = document.querySelectorAll('.possible-solutions li')[8 * i];
+      const solutionHolderTwo = document.querySelectorAll('.possible-solutions li')[8 * i + 1];
+      const solutionHolderThree = document.querySelectorAll('.possible-solutions li')[8 * i + 2];
+      const solutionHolderFour = document.querySelectorAll('.possible-solutions li')[8 * i + 3];
+      const solutionHolderFive = document.querySelectorAll('.possible-solutions li')[8 * i + 4];
+      const solutionHolderSix = document.querySelectorAll('.possible-solutions li')[8 * i + 5];
+      const solutionHolderSeven = document.querySelectorAll('.possible-solutions li')[8 * i + 6];
+      const solutionHolderEight = document.querySelectorAll('.possible-solutions li')[8 * i + 7];
+      const problemOneOrderChoice = Math.floor(Math.random() * 4);
+      if (problemOneOrderChoice === 0) {
+        solutionHolderOne.textContent = `${squareRoot}`;
+        solutionHolderTwo.textContent = `${squared}`;
+        solutionHolderThree.textContent = `${incorrectSolutionTwo}`;
+        solutionHolderFour.textContent = `${incorrectSolutionThree}`;
+      } else if (problemOneOrderChoice === 1) {
+        solutionHolderTwo.textContent = `${squareRoot}`;
+        solutionHolderOne.textContent = `${squared}`;
+        solutionHolderThree.textContent = `${incorrectSolutionTwo}`;
+        solutionHolderFour.textContent = `${incorrectSolutionThree}`;
+      } else if (problemOneOrderChoice === 2) {
+        solutionHolderThree.textContent = `${squareRoot}`;
+        solutionHolderTwo.textContent = `${squared}`;
+        solutionHolderOne.textContent = `${incorrectSolutionTwo}`;
+        solutionHolderFour.textContent = `${incorrectSolutionThree}`;
+      } else {
+        solutionHolderFour.textContent = `${squareRoot}`;
+        solutionHolderThree.textContent = `${squared}`;
+        solutionHolderTwo.textContent = `${incorrectSolutionTwo}`;
+        solutionHolderOne.textContent = `${incorrectSolutionThree}`;
+      }
+
+      // working on problem two
+      const solutionTwo = Math.floor(Math.random() * 20) + 20;
+      problemTwoEquationHolder.textContent = `\\( f(x) = x + b \\)`;
+      questionTwo.textContent = `For the linear function \\( f, b \\) is a constant. When \\( x = 0 \\), \\( f(x) = ${solutionTwo} \\). What is the value of \\( b \\)?`;
+
+      // create 2nd order choice variable
+      const problemTwoOrderChoice = Math.floor(Math.random() * 4);
+      if (problemTwoOrderChoice === 0) {
+        solutionHolderFive.textContent = `${solutionTwo}`;
+        solutionHolderSix.textContent = `\\( -${solutionTwo} \\)`;
+        solutionHolderSeven.textContent = `\\( \\frac\{1\}\{${solutionTwo}\} \\)`;
+        solutionHolderEight.textContent = `\\( -\\frac\{1\}\{${solutionTwo}\} \\)`;
+      } else if (problemTwoOrderChoice === 1) {
+        solutionHolderSix.textContent = `${solutionTwo}`;
+        solutionHolderFive.textContent = `\\( -${solutionTwo} \\)`;
+        solutionHolderSeven.textContent = `\\( \\frac\{1\}\{${solutionTwo}\} \\)`;
+        solutionHolderEight.textContent = `\\( -\\frac\{1\}\{${solutionTwo}\} \\)`;
+      } else if (problemTwoOrderChoice === 2) {
+        solutionHolderSeven.textContent = `${solutionTwo}`;
+        solutionHolderFive.textContent = `\\( -${solutionTwo} \\)`;
+        solutionHolderSix.textContent = `\\( \\frac\{1\}\{${solutionTwo}\} \\)`;
+        solutionHolderEight.textContent = `\\( -\\frac\{1\}\{${solutionTwo}\} \\)`;
+      } else {
+        solutionHolderEight.textContent = `${solutionTwo}`;
+        solutionHolderSeven.textContent = `\\( -${solutionTwo} \\)`;
+        solutionHolderSix.textContent = `\\( \\frac\{1\}\{${solutionTwo}\} \\)`;
+        solutionHolderFive.textContent = `\\( -\\frac\{1\}\{${solutionTwo}\} \\)`;
+      }
+    }
+  </script>
+</body>
+</html>
