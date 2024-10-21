@@ -85,21 +85,21 @@
         let coefficient = solutionOne + solutionTwo;
         let constantTerm = solutionOne * solutionTwo;
         if (coefficient === 0) {
-            return `x<sup>2</sup> &minus; ${Math.abs(constantTerm)}`;
+            return `x<sup>2</sup> &minus; ${Math.abs(constantTerm)} = 0`;
         }
         if (Math.abs(solutionOne) < 0 && Math.abs(solutionTwo) < 0) {
-            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${Math.abs(constantTerm)}`
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${Math.abs(constantTerm)} = 0`
         }
         if (coefficient < 0 && constantTerm < 0) {
-            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x &minus; ${Math.abs(constantTerm)}`;
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x &minus; ${Math.abs(constantTerm)} = 0`;
         }
         if (coefficient < 0) {
-            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${constantTerm}`;
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${constantTerm} = 0`;
         }
         if (constantTerm < 0) {
-            return `x<sup>2</sup> + ${coefficient}x &minus; ${Math.abs(constantTerm)}`;
+            return `x<sup>2</sup> + ${coefficient}x &minus; ${Math.abs(constantTerm)} = 0`;
         }
-        return `x<sup>2</sup> + ${coefficient}x + ${constantTerm}`;
+        return `x<sup>2</sup> + ${coefficient}x + ${constantTerm} = 0`;
     }
 
     for (let i = 0; i < 8; i++) {
