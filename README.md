@@ -12,4 +12,8 @@ To print the files use:
 
 - ctrl-p
 
+## For the Infinite Quizzes
+
+These files start with quiz. Each time you refresh a new quiz version will generate in the browser (only one version is generated at a time). You can then print that version and then regenerate a new version and print that and so on, for whatever amount of quizzes you need. **Note:** Currently infinite quizzes do not contain answer keys.
+
 Enjoy!
