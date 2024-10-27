@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System of Equations</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+            padding: 15px 0px;
+        }
+
+        .equation-1, .equation-2 {
+            text-align: center;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+        <div class="row">
+            <div class="p equation-1"></div>
+            <p class="equation-2"></p>
+            <p class="instructions">The solution to the given system of equations is (x, y). What is the value of y?</p>
+        </div>
+    </div>
+    <script>
+        for(let i = 0; i < 16; i++) {
+            const equationOne = document.querySelectorAll('.equation-1')[i];
+            const equationTwo = document.querySelectorAll('.equation-2')[i];
+            let constantOne = Math.floor(Math.random() * 5) + 5;
+            let constantTwo = Math.floor(Math.random() * 5) + 5;
+            let constantThree = Math.floor(Math.random() * 5) + 5;
+            let xValue = Math.floor(Math.random() * 6) + 1;
+            let yValue = Math.floor(Math.random() * 6) + 1;
+            const constantOneSign = Math.floor(Math.random() * 2);
+            const constantTwoSign = Math.floor(Math.random() * 2);
+            const constantThreeSign = Math.floor(Math.random() * 2);
+            const xValueSign = Math.floor(Math.random() * 2);
+            const yValueSign = Math.floor(Math.random() * 2);
+            if (constantOneSign === 0) {
+                constantOne *= -1;
+            }
+            if (constantTwoSign === 0) {
+                constantTwo *= -1;
+            }
+            if (constantThreeSign === 0) {
+                constantThree *= -1;
+            }
+            if (xValueSign === 0) {
+                xValue *= -1;
+            }
+            if (yValueSign === 0) {
+                yValue *= -1;
+            }
+            const rightSideOne = constantOne * xValue;
+            const rightSideTwo = constantTwo * xValue + constantThree * yValue;
+            equationOne.textContent = `${constantOne}x = ${rightSideOne}`;
+            equationTwo.textContent = `${constantTwo}x + ${constantThree}y = ${rightSideTwo}`;
+        }
+    </script>
+</body>
+</html>

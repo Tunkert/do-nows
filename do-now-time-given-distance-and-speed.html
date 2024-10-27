@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<style type="text/css">
+		.container { margin: 0 0.5in; }
+		.row { border-bottom:7px dotted hotpink; min-height: 200px }
+		ul li { list-style:upper-alpha; margin-bottom: 10px;}
+		.pb { page-break-after:always; }
+		.version-number { margin-top: 7px; }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="pb"></div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="version-number"></div>
+		<p></p>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	for (let i = 0; i < 8; i++) {
+		// label version number
+		const versionNumber = document.querySelectorAll('.version-number')[i];
+		versionNumber.innerHTML = `<strong>v${i + 1}</strong>`;
+
+		// create the question
+		const speed = Math.floor(Math.random() * 10) + 11;
+		const distance = (Math.floor(Math.random() * 7) + 7) * speed;
+		const questionHolder = document.querySelectorAll('.row p')[i];
+		const units = [
+			"centimeters",
+			"inches",
+			"feet",
+			"miles",
+			"kilometers",
+			"meters"
+		];
+		const unitSelector = Math.floor(Math.random() * units.length);
+		questionHolder.textContent = `An object travels at a constant speed of ${speed} ${units[unitSelector]} per second. At this speed, what is the time, in seconds, that it would take for the object to travel ${distance} ${units[unitSelector]}?`;
+
+		// solutions correct and incorrect
+		const correctSolution = Math.floor(distance / speed);
+		const incorrectSolutionOne = distance * speed;
+		const incorrectSolutionTwo = distance * speed - speed;
+		const incorrectSolutionThree = distance * correctSolution;
+
+		// select the order of the solutions
+		const orderChoice = Math.floor(Math.random() * 4);
+		const possibleSolutionOne = document.querySelectorAll('.row li')[4 * i];
+		const possibleSolutionTwo = document.querySelectorAll('.row li')[4 * i + 1];
+		const possibleSolutionThree = document.querySelectorAll('.row li')[4 * i + 2];
+		const possibleSolutionFour = document.querySelectorAll('.row li')[4 * i + 3];
+		if (orderChoice === 0) {
+			possibleSolutionOne.textContent = `${correctSolution}`;
+			possibleSolutionTwo.textContent = `${incorrectSolutionOne}`;
+			possibleSolutionThree.textContent = `${incorrectSolutionTwo}`;
+			possibleSolutionFour.textContent = `${incorrectSolutionThree}`;
+		} else if (orderChoice === 1) {
+			possibleSolutionTwo.textContent = `${correctSolution}`;
+			possibleSolutionOne.textContent = `${incorrectSolutionOne}`;
+			possibleSolutionThree.textContent = `${incorrectSolutionTwo}`;
+			possibleSolutionFour.textContent = `${incorrectSolutionThree}`;
+		} else if (orderChoice === 2) {
+			possibleSolutionThree.textContent = `${correctSolution}`;
+			possibleSolutionTwo.textContent = `${incorrectSolutionOne}`;
+			possibleSolutionOne.textContent = `${incorrectSolutionTwo}`;
+			possibleSolutionFour.textContent = `${incorrectSolutionThree}`;
+		} else {
+			possibleSolutionFour.textContent = `${correctSolution}`;
+			possibleSolutionThree.textContent = `${incorrectSolutionOne}`;
+			possibleSolutionTwo.textContent = `${incorrectSolutionTwo}`;
+			possibleSolutionOne.textContent = `${incorrectSolutionThree}`;
+		}
+	}
+</script>
+</body>
+</html>

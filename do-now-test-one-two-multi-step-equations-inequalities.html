@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Algebra I Fundamentals Test Review </title>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<style type="text/css">
+		.container { margin: 0 0.5in; }
+		.row { display:flex; justify-content:space-between; min-height:200px }
+		.problem { width:45%; }
+		.pb { page-break-after:always; }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 1</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 2</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 3</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 4</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 5</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 6</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 7</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 8</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="pb"></div>
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 9</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 10</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2>Problem 11</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 12</h2>
+			<p></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	let problemOneEquation = () => {
+		let a = Math.floor(Math.random() * 5) + 4;
+		let b = Math.floor(Math.random() * 5) + 4;
+		while (a >= b) {
+			a = Math.floor(Math.random() * 5) + 4;
+			b = Math.floor(Math.random() * 5) + 4;
+		}
+		return `Solve for x (Resuelve para x):<br>x + ${a} = ${b}`;
+	}
+
+	let problemTwoEquation = () => {
+		let a = Math.floor(Math.random() * 5) + 4;
+		let b = Math.floor(Math.random() * 5) + 4;
+		return `Solve for x (Resuelve para x):<br>x &minus; ${a} = ${b}`;
+	}
+
+	let problemThreeEquation = () => {
+		let a = Math.floor(Math.random() * 5) + 4;
+		let b = Math.floor(Math.random() * 3) + 3;
+		let c = a * b;
+		return `Solve for x (Resuelve para x):<br>${a}x = ${c}`;
+	}
+
+	let problemFourEquation = () => {
+		let a = Math.floor(Math.random() * 5) + 4;
+		let b = Math.floor(Math.random() * 3) + 3;
+		return `Solve for x (Resuelve para x):<br>\\( \\frac\{x\}\{${a}\} = ${b} \\)`;
+	}
+
+	let problemFiveEquation = () => {
+		let a = Math.floor(Math.random() * 5) + 7;
+		let b = Math.floor(Math.random() * 5) + 7;
+		let xValue = Math.floor(Math.random() * 5) + 7;
+		// c = ax + b
+		let c = a * xValue + b;
+		let signChooser = Math.floor(Math.random() * 2);
+		if (signChooser === 0) {
+			return `Solve for x (Resuelve para x):<br>${a}x + ${b} = ${c}`;
+		}
+		return `Solve for x (Resuelve para x):<br>${a}x &minus; ${b} = ${c}`;
+	}
+
+	let problemSixEquation = () => {
+		let a = Math.floor(Math.random() * 4) + 4;
+		let b = Math.floor(Math.random() * 4) + 4;
+		let c = Math.floor(Math.random() * 4) + 4;
+		let signChooser = Math.floor(Math.random() * 2);
+		if (signChooser === 0) {
+			return `Solve for x (Resuelve para x):<br>\\( \\frac\{x\}\{${a}\} - ${b} = ${c} \\)`;
+		}
+		return `Solve for x (Resuelve para x):<br>\\( \\frac\{x\}\{${a}\} + ${b} = ${c} \\)`;
+	}
+
+	let oneStepInequality = () => {
+		let a = Math.floor(Math.random() * 4) + 4;
+		let b = Math.floor(Math.random() * 4) + 4;
+		let aSign = Math.floor(Math.random() * 2);
+		let bSign = Math.floor(Math.random() * 2);
+		if (aSign === 0) {
+			a *= -1;
+		}
+		if (bSign === 0) {
+			b *= -1;
+		}
+		let c = a * b;
+		let signChooser = Math.floor(Math.random() * 4);
+		if (signChooser === 0) {
+			return `Solve:<br>${a}x &gt; ${c}`;
+		} else if (signChooser === 1) {
+			return `Solve:<br>${a}x <u>&gt;</u> ${c}`;
+		} else if (signChooser === 2) {
+			return `Solve:<br>${a}x &lt; ${c}`;
+		}
+		return `Solve:<br>${a}x <u>&lt;</u> ${c}`;
+	}
+
+	let twoStepInequality = () => {
+		let a = Math.floor(Math.random() * 4) + 4;
+		let b = Math.floor(Math.random() * 4) + 4;
+		let xValue = Math.floor(Math.random() * 4) + 4;
+		// ax + b > c
+		let c = a * xValue + b;
+		let signChooser = Math.floor(Math.random() * 4);
+		if (signChooser === 0) {
+			return `Solve:<br>${a}x + ${b} &gt; ${c}`;
+		} else if (signChooser === 1) {
+			return `Solve:<br>${a}x + ${b} <u>&gt;</u> ${c}`;
+		} else if (signChooser === 2) {
+			return `Solve:<br>${a}x + ${b} &lt; ${c}`;
+		}
+		return `Solve:<br>${a}x + ${b} <u>&lt;</u> ${c}`;
+	}
+
+	let multiStepEquation = () => {
+		// ax + b(x + c) = d
+		// ax + bx + bc = d
+		let a = Math.floor(Math.random() * 7) + 3;
+		let b = Math.floor(Math.random() * 7) + 3;
+		let xValue = Math.floor(Math.random() * 7) + 3;
+		let c = Math.floor(Math.random() * 7) + 3;
+		let d = a * xValue + b * xValue + b * c;
+		return `Solve for x (Resuelve para x):<br>${a}x + ${b}(x + ${c}) = ${d}`;
+	}
+
+	const equationOne = document.querySelectorAll('.problem p')[0];
+	const equationTwo = document.querySelectorAll('.problem p')[1];
+	const equationThree = document.querySelectorAll('.problem p')[2];
+	const equationFour = document.querySelectorAll('.problem p')[3];
+	const equationFive = document.querySelectorAll('.problem p')[4];
+	const equationSix = document.querySelectorAll('.problem p')[5];
+	const equationSeven = document.querySelectorAll('.problem p')[6];
+	const equationEight = document.querySelectorAll('.problem p')[7];
+	const equationNine = document.querySelectorAll('.problem p')[8];
+	const equationTen = document.querySelectorAll('.problem p')[9];
+	const equationEleven = document.querySelectorAll('.problem p')[10];
+	const equationTwelve = document.querySelectorAll('.problem p')[11];
+
+	// problem one
+	equationOne.innerHTML = `${problemOneEquation()}`;
+
+	// Problem two
+	equationTwo.innerHTML = `${problemTwoEquation()}`;
+
+	// problem three
+	equationThree.innerHTML = `${problemThreeEquation()}`;
+
+	// problem four
+	equationFour.innerHTML = `${problemFourEquation()}`;
+
+	// problem five
+	equationFive.innerHTML = `${problemFiveEquation()}`;
+
+	// problem six
+	equationSix.innerHTML = `${problemSixEquation()}`;
+
+	// problem seven and eight
+	equationSeven.innerHTML = `${oneStepInequality()}`;
+	equationEight.innerHTML = `${oneStepInequality()}`;
+
+	// problem nine and ten
+	equationNine.innerHTML = `${twoStepInequality()}`;
+	equationTen.innerHTML = `${twoStepInequality()}`;
+
+	// problem eleven and twelve
+	equationEleven.innerHTML = `${multiStepEquation()}`;
+	equationTwelve.innerHTML = `${multiStepEquation()}`;
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is One of the Solutions to the Quadratic</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .problem {
+            min-height: 200px;
+            border-bottom: 6px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+
+        .center, .instructions {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="pb"></div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="problem">
+        <p class="version-number"></p>
+        <p class="center"></p>
+        <p class="instructions"></p>
+    </div>
+    <div class="pb"></div>
+    <div class="solutions">
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<script>
+    function returnProblem(solutionOne, solutionTwo) {
+        let coefficient = solutionOne + solutionTwo;
+        let constantTerm = solutionOne * solutionTwo;
+        if (coefficient === 0) {
+            return `x<sup>2</sup> &minus; ${Math.abs(constantTerm)} = 0`;
+        }
+        if (Math.abs(solutionOne) < 0 && Math.abs(solutionTwo) < 0) {
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${Math.abs(constantTerm)} = 0`
+        }
+        if (coefficient < 0 && constantTerm < 0) {
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x &minus; ${Math.abs(constantTerm)} = 0`;
+        }
+        if (coefficient < 0) {
+            return `x<sup>2</sup> &minus; ${Math.abs(coefficient)}x + ${constantTerm} = 0`;
+        }
+        if (constantTerm < 0) {
+            return `x<sup>2</sup> + ${coefficient}x &minus; ${Math.abs(constantTerm)} = 0`;
+        }
+        return `x<sup>2</sup> + ${coefficient}x + ${constantTerm} = 0`;
+    }
+
+    for (let i = 0; i < 8; i++) {
+        const problemInstructions = document.querySelectorAll('.problem .instructions')[i];
+        const versionNumberContainer = document.querySelectorAll('.problem .version-number')[i];
+        const solutionItem = document.querySelectorAll('.solutions ol li')[i];
+        const equationContainer = document.querySelectorAll('.problem .center')[i];
+        const versionNumber = i + 1;
+        versionNumberContainer.textContent = `V ${versionNumber}`;
+        problemInstructions.textContent = `What is one of the solutions to the given equation?`;
+        let solution1 = Math.floor(Math.random() * 5) + 1;
+        let solution2 = Math.floor(Math.random() * 5) + 1;
+        let solutionOneSign = Math.floor(Math.random() * 2);
+        let solutionTwoSign = Math.floor(Math.random() * 2);
+        if (solutionOneSign === 0) {
+            solution1 *= -1;
+        }
+
+        if (solutionTwoSign === 0) {
+            solution2 *= -1;
+        }
+        solutionItem.textContent = `x = ${solution1} or x = ${solution2}`;
+        const theEquation = returnProblem(solution1, solution2);
+        equationContainer.innerHTML = `${theEquation}`;
+    }
+</script>
+</body>
+</html>
