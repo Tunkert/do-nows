@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quadratics Quiz Review</title>
+	<style type="text/css">
+		.container { margin: 0 0.5in; }
+		.row { display:flex; justify-content:space-between; min-height:300px; }
+		.problem { width: 45%; }
+		.pb { page-break-after: always; }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row" style="min-height: 200px;">
+		<div class="problem">
+			<h2>Problem 1</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 2</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row" style="min-height: 200px;">
+		<div class="problem">
+			<h2>Problem 3</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 4</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row" style="min-height: 490px;">
+		<div class="problem">
+			<h2>Problem 5</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 6</h2>
+			<p></p>
+		</div>
+	</div>
+	<footer>
+		<p class="center"><strong>Warning:</strong> This quiz / quiz review was made by a Tim.</p>
+	</footer>
+	<div class="pb"></div>
+	<div class="row" style='min-height: 380px;'>
+		<div class="problem">
+			<h2>Problem 7</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 8</h2>
+			<p></p>
+		</div>
+	</div>
+	<div class="row" style='min-height: 500px;'>
+		<div class="problem">
+			<h2>Problem 9</h2>
+			<p></p>
+		</div>
+		<div class="problem">
+			<h2>Problem 10</h2>
+			<p></p>
+		</div>
+	</div>
+	<footer>
+		<p class="center"><strong>Warning:</strong> This quiz / quiz review was made by a Tim.</p>
+	</footer>
+</div>
+<script type="text/javascript">
+	const problemOne = document.querySelectorAll('.problem p')[0];
+	const problemTwo = document.querySelectorAll('.problem p')[1];
+	const problemThree = document.querySelectorAll('.problem p')[2];
+	const problemFour = document.querySelectorAll('.problem p')[3];
+	const problemFive = document.querySelectorAll('.problem p')[4];
+	const problemSix = document.querySelectorAll('.problem p')[5];
+	const problemSeven = document.querySelectorAll('.problem p')[6];
+	const problemEight = document.querySelectorAll('.problem p')[7];
+	const problemNine = document.querySelectorAll('.problem p')[8];
+	const problemTen = document.querySelectorAll('.problem p')[9];
+	// problem one
+	const initialVelocityOne = Math.floor(Math.random() * 10) + 10;
+	const initialHeightOne = Math.floor(Math.random() * 10) + 10;
+	problemOne.innerHTML = `A missile is fired from an initial velocity of ${initialVelocityOne} m/s and an initial height of ${initialHeightOne} meters. Write an equation to represent the path of the projectile.`;
+
+	// problem two 
+	let solutionTwoA = Math.floor(Math.random() * 5) + 5;
+	let solutionTwoB = Math.floor(Math.random() * 5) + 5;
+	let solutionTwoASign = Math.floor(Math.random() * 2);
+	let solutionTwoBSign = Math.floor(Math.random() * 2);
+	if (solutionTwoASign === 0) {
+		solutionTwoA *= -1;
+	}
+	if (solutionTwoBSign === 0) {
+		solutionTwoB *= -1;
+	}
+	const middleTermTwo = solutionTwoA + solutionTwoB;
+	const lastContstantTwo = solutionTwoA * solutionTwoB;
+	problemTwo.innerHTML = `What is one solution to the following equation?<br>x<sup>2</sup> + ${middleTermTwo}x + ${lastContstantTwo} = 0`;
+
+	// problem three 
+	let solutionThreeA = Math.floor(Math.random() * 5) + 5;
+	let solutionThreeB = Math.floor(Math.random() * 5) + 5;
+	let solutionThreeASign = Math.floor(Math.random() * 2);
+	let solutionThreeBSign = Math.floor(Math.random() * 2);
+	if (solutionThreeASign === 0) {
+		solutionThreeA *= -1;
+	}
+	if (solutionThreeBSign === 0) {
+		solutionThreeB *= -1;
+	}
+	const middleTermThree = solutionThreeA + solutionThreeB;
+	const lastContstantThree = solutionThreeA * solutionThreeB;
+	problemThree.innerHTML = `What is one solution to the following equation?<br>x<sup>2</sup> + ${middleTermThree}x + ${lastContstantThree} = 0`;
+
+	// problem four
+	let minimumValue = Math.floor(Math.random() * 50) + 50;
+	let minimumValueSign = Math.floor(Math.random() * 2);
+	let letterArray = [
+		"f",
+		"g",
+		"h",
+	];
+	if (minimumValueSign === 0) {
+		minimumValue *= -1;
+	}
+	if (minimumValue > 0) {
+		problemFour.innerHTML = `What is the minimum value of the following function?<br>${letterArray[Math.floor(Math.random() * letterArray.length)]}(x) = x<sup>2</sup> + ${minimumValue}`;
+	} else if (minimumValue < 0) {
+		problemFour.innerHTML = `What is the minimum value of the following function?<br>${letterArray[Math.floor(Math.random() * letterArray.length)]}(x) = x<sup>2</sup> - ${-1 * minimumValue}`;
+	} else {
+		problemFour.innerHTML = `What is the minimum value of the following function?<br>${letterArray[Math.floor(Math.random() * letterArray.length)]}(x) = x<sup>2</sup>`;
+	}
+
+	// problem five
+	const maxValueFive = Math.floor(Math.random() * 25) + 25;
+	problemFive.innerHTML = `Jimmy McJimmerson, the third, of Jimsville goes to the bank to get out $10 from the ATM. It's not much, but it will get him by until tomorrow, which is payday. He's going to go out and "pop tags" and get <strike>something</strike> some clothing from the Thrift store. Anyhow, he then goes into his backyard and fires a rocket from the ground. The rocket reaches a max height of ${maxValueFive} meters. What was the initial velocity of the rocket?`;
+
+	// problem six
+	const initialVelocitySix = Math.floor(Math.random() * 100) + 3402.9 + 3000;
+	const initialHeightSix = Math.floor(Math.random() * 1000) + 30000;
+	problemSix.innerHTML = `Maverick goes blasting to mach 10 against Admiral Cain's wishes. After rambling something about bad communication with Earth, he figures, "forget that Admiral, I'm going to go for it" and he fires a ballistic missile from his jet that travels in a projectile motion. The initial velocity of the missile, when combined with his speed is ${initialVelocitySix} meters per second and the initial height is ${initialHeightSix} meters. How long, in seconds, does it take the rocket to hit the ground?`;
+
+	// problem seven
+	problemSeven.innerHTML = `What was the initial height of the rocket in problem #6, by the way?`;
+
+	// problem eight
+	let topGunNames = [
+		"Maverick",
+		"Goose",
+		"Rooster",
+		"Iceman",
+		"Hollywood",
+		"Jester",
+		"Viper",
+		"Phoenix",
+		"Harvard",
+		"Payback",
+		"Fanboy",
+		"Slider",
+		"Cyclone",
+		"Warlock",
+	];
+	let pilotName = topGunNames[Math.floor(Math.random() * topGunNames.length)];
+	let initialVelocityProblemEight = Math.floor(Math.random() * 1000) + 1000;
+	problemEight.innerHTML = `${pilotName} is listening to "Dust in the Wind," and thinking about the past, but figures he must, "Carry on," like a wayward son, regardless of his past. He decides to see if Penny and Hangman want to get launched from a rocket that they are sitting on (it's a new amusement ride apparently). They all decide to go and the rocket launches from a tower 100 meters high at an initial velocity of ${initialVelocityProblemEight} meters per second. He reaches the maximum height the rocket will travel and at that instant, thinks, "this might have been a bad idea!" How long did it take after launch for ${pilotName} to realize this might have been a bad idea?`;
+
+	// problem nine
+	let minimumValueNumberNine = 50 + Math.floor(Math.random() * 150);
+	problemNine.innerHTML = `Maverick, Rooster, Phonenix, Bob, and some other bros are flying on a mission in enemy territory. They take a dive into a canyon that can be modeled by a parabola. The path of their flight can be modeled by the equation<br>f(x) = x<sup>2</sup> + ${minimumValueNumberNine}. <br>What is the lowest elevation they fly (note: units are in meters)?`;
+
+	// problem ten
+	let xValueTen = Math.floor(Math.random() * 50) + 50;
+	let yValueTen = Math.floor(Math.random() * 100) + 100;
+	problemTen.innerHTML = `After Harvard does 200 push ups for getting crushed by Maverick in a training mission, he decides to blow off steam and dive into a canyon, because, "Maverick, Rooster, Phoenix, Bob, and their bros shouldn't have all the fun." "I'm cool too," Harvard thinks. He quickly gets to his jet and goes flying into a canyon. His path is modeled by the equation, y = (x - ${xValueTen})<sup>2</sup> - ${yValueTen}. At what <b>point</b> does he reach his minimum height in this flight into the canyon?`;
+</script>
+</body>
+</html>

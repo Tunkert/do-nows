@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Equations (Easier)</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 200px;
+            border-bottom: 7px dotted hotpink;
+            text-align: center;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+        <div class="row">
+            <p class="equation"></p>
+            <p>Solve for x. (Resuelve x)</p>
+        </div>
+    </div>
+    <script>
+    for (let i = 0; i < 8; i++) {
+        const problemEquation = document.querySelectorAll('.row .equation')[i];
+        const a = Math.floor(Math.random() * 5) + 1;
+        const b = Math.floor(Math.random() * 5) + 1;
+        const c = Math.floor(Math.random() * 5) + 1;
+        const xValue = Math.floor(Math.random() * 5) + 1;
+        const d = a * xValue + b * (xValue + c);
+        problemEquation.textContent = `${a}x + ${b}(x + ${c}) = ${d}`;
+    }
+    </script>
+</body>
+</html>

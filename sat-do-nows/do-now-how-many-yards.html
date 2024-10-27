@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>How many yards?</title>
+    <style>
+      .container {
+        margin: 0 0.5in;
+      }
+
+      .problem {
+        min-height: 190px;
+        border-bottom: 7px dotted hotpink;
+      }
+
+      .pb {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="pb"></div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="problem">
+        <p></p>
+      </div>
+      <div class="pb"></div>
+      <div class="solutions">
+        <h2>Solutions</h2>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </div>
+    </div>
+    <script type="text/javascript">
+      for (let i = 0; i < 8; i++) {
+        const problemParagraph = document.querySelectorAll('.problem p')[i];
+        const result = Math.floor(Math.random() * 20) + 10;
+        const inches = result * 36;
+        problemParagraph.innerHTML = `<strong>V ${i + 1}:</strong> How many yards are equivalent to ${inches} inches? (Note: 1 yard = 36 inches)`;
+        const solutionItem = document.querySelectorAll('.solutions li')[i];
+        solutionItem.textContent = `${result}`
+      }
+    </script>
+  </body>
+</html>
