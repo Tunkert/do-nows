@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worksheet - PSAT 1</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- style -->
+    <style>
+        .container { margin: 0 0.5in; }
+        .row { display: flex; justify-content: space-between; min-height: 300px;}
+        .problem { width: 45%; }
+        .pb { page-break-after: always;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="equation"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+</div>
+<script>
+    // functions
+    let percentOfOneHundred = () => {
+        const percent = Math.floor(Math.random() * 40) + 50;
+        return `What is ${percent}% of 100 (¿Cuánto es ${percent}% de 100?)?`;
+    }
+
+    let valueOfExpression = () => {
+        const constantOne = Math.floor(Math.random() * 20) + 30;
+        const constantTwo = Math.floor(Math.random() * 5) + 5;
+        return `If \\( x \\) = ${constantOne}, what is \\( x \\) + ${constantTwo}? (Si \\( x \\) = ${constantOne}, ¿qué es \\( x \\) + ${constantTwo}?)`;
+    }
+
+    let valueOfExpressionMultiplication = () => {
+        let coefficientOne = Math.floor(Math.random() * 5) + 5;
+        const multiplier = Math.floor(Math.random() * 5) + 5;
+        let coefficientTwo = Math.floor(Math.random() * 5) + 5;
+        while (coefficientOne === coefficientTwo) {
+            coefficientOne = Math.floor(Math.random() * 5) + 5;
+            coefficientTwo = Math.floor(Math.random() * 5) + 5;
+        }
+        let total = coefficientOne * multiplier;
+
+        return `If \\( ${coefficientOne}x \\) = ${total}, what is the value of \\( ${coefficientTwo}x \\)? (Si \\( ${coefficientOne}x = ${total} \\), ¿cuál es el valor de \\( ${coefficientTwo}x \\)?)`;
+    }
+
+    let valueOfP = () => {
+        let valueOfP = Math.floor(Math.random() * 20) + 10;
+        let coefficientOne = Math.floor(Math.random() * 5) + 5;
+        let constantOne = Math.floor(Math.random() * 100) + 100;
+        let total = coefficientOne * valueOfP + constantOne;
+        return `What value of \\( p \\) satisfies the equation? (¿Qué valor de p satisface la ecuación?)<br> \\( ${coefficientOne}p + ${constantOne} = ${total} \\)`;
+    }
+
+    let valueOfX = () => {
+        let valueOfX = Math.floor(Math.random() * 5) + 5;
+        let coefficientOne = Math.floor(Math.random() * 7) + 5;
+        let coefficientTwo = Math.floor(Math.random() * 7) + 5;
+        while (coefficientOne <= coefficientTwo) {
+            coefficientOne = Math.floor(Math.random() * 7) + 5;
+            coefficientTwo = Math.floor(Math.random() * 7) + 5;
+        }
+        let constantOne = Math.floor(Math.random() * 50) + 100;
+        let total = coefficientOne * valueOfX - coefficientTwo * valueOfX + constantOne;
+        return `\\( ${coefficientOne}x - ${coefficientTwo}x + ${constantOne} = ${total} \\)<br><br>What value of \\( x \\) is the solution to the given equation? (¿Qué valor de \\( x \\) es la solución de la ecuación dada?)`;
+    }
+
+    // define equations
+    const equationOne = document.querySelectorAll('.equation')[0];
+    const equationTwo = document.querySelectorAll('.equation')[1];
+    const equationThree = document.querySelectorAll('.equation')[2];
+    const equationFour = document.querySelectorAll('.equation')[3];
+    const equationFive = document.querySelectorAll('.equation')[4];
+    const equationSix= document.querySelectorAll('.equation')[5];
+    const equationSeven = document.querySelectorAll('.equation')[6];
+    const equationEight = document.querySelectorAll('.equation')[7];
+    const equationNine = document.querySelectorAll('.equation')[8];
+    const equationTen = document.querySelectorAll('.equation')[9];
+
+    // headings
+    for (let i = 0; i < 10; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+    }
+
+    // problems one and two
+    equationOne.textContent = `${percentOfOneHundred()}`;
+    equationTwo.textContent = `${percentOfOneHundred()}`;
+
+    // problems three and four
+    equationThree.textContent = `${valueOfExpression()}`;
+    equationFour.textContent = `${valueOfExpression()}`;
+
+    // problem five and six
+    equationFive.textContent = `${valueOfExpressionMultiplication()}`;
+    equationSix.textContent = `${valueOfExpressionMultiplication()}`;
+
+    // problem seven and eight
+    equationSeven.innerHTML = `${valueOfP()}`;
+    equationEight.innerHTML = `${valueOfP()}`;
+
+    // problem nine and ten
+    equationNine.innerHTML = `${valueOfX()}`;
+    equationTen.innerHTML = `${valueOfX()}`;
+
+</script>
+</body>
+</html>
