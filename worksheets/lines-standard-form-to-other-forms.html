@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standard Form to Other Forms</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        ul li {
+            margin-bottom: 20px;
+        }
+
+        .pb { page-break-after: always; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 01</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <h2>Problem 02</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 03</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <h2>Problem 04</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 05</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <h2>Problem 06</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 07</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <h2>Problem 08</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 09</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="problem">
+            <h2>Problem 10</h2>
+            <p class="equation"></p>
+            <p class="instruction">Convert the given form of the line to slope-intercept and point-slope form.</p>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    let standardForm = () => {
+        let a = Math.floor(Math.random() * 5) + 5;
+        let b = Math.floor(Math.random() * 5) + 5;
+        let c = Math.floor(Math.random() * 5) + 5;
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        if (bSign === 0) {
+            b *= -1;
+        }
+        if (cSign === 0) {
+            c *= -1;
+        }
+        if (b > 0) {
+            return `\\( ${a}x + ${b} = ${c} \\)`;
+        }
+        return `\\( ${a}x - ${-1 * b} = ${c} \\)`;
+    }
+
+    for (let i = 0; i < 10; i++) {
+        const equation = document.querySelectorAll('.problem .equation')[i];
+        equation.textContent = `${standardForm()}`;
+        const listItemOne = document.querySelectorAll('.problem ul li')[2 * i];
+        const listItemTwo = document.querySelectorAll('.problem ul li')[2 * i + 1];
+        listItemOne.innerHTML = `<strong<u>Slope Intercept Form:</u></strong>`;
+        listItemTwo.innerHTML = `<strong<u>Point Slope Form:</u></strong>`;
+    }
+</script>
+</body>
+</html>
