@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lines - Slope-Intercept to Other Forms</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>Convert the following lines to standard form and point-slope form.</p>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="line"></p>
+            <p class="instructions"></p>
+        </div>
+    </div>
+</div>
+<script>
+    let createLine = () => {
+        let slope = Math.floor(Math.random() * 5) + 4;
+        let yIntercept = Math.floor(Math.random() * 10) + 10;
+        let slopeSign = Math.floor(Math.random() * 2);
+        let yInterceptSign = Math.floor(Math.random() * 2);
+        if (slopeSign === 0) {
+            slope *= -1;
+        }
+
+        if (yInterceptSign === 0) {
+            yIntercept *= -1;
+        }
+
+        if (yIntercept < 0) {
+            return `\\( y = ${slope}x - ${yIntercept * -1} \\)`;
+        }
+        return `\\( y = ${slope}x + ${yIntercept} \\)`;
+    }
+
+
+    // problem containers
+    const problemOne = document.querySelectorAll('.problem .line')[0];
+    const problemTwo = document.querySelectorAll('.problem .line')[1];
+    const problemThree = document.querySelectorAll('.problem .line')[2];
+    const problemFour = document.querySelectorAll('.problem .line')[3];
+    const problemFive = document.querySelectorAll('.problem .line')[4];
+    const problemSix = document.querySelectorAll('.problem .line')[5];
+    const problemSeven = document.querySelectorAll('.problem .line')[6];
+    const problemEight = document.querySelectorAll('.problem .line')[7];
+    const problemNine = document.querySelectorAll('.problem .line')[8];
+    const problemTen = document.querySelectorAll('.problem .line')[9];
+
+    // label the headings
+    for (let i = 0; i < 10; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+    }
+
+    // fill in problems
+    problemOne.innerHTML = `${createLine()}`;
+    problemTwo.innerHTML = `${createLine()}`;
+    problemThree.innerHTML = `${createLine()}`;
+    problemFour.innerHTML = `${createLine()}`;
+    problemFive.innerHTML = `${createLine()}`;
+    problemSix.innerHTML = `${createLine()}`;
+    problemSeven.innerHTML = `${createLine()}`;
+    problemEight.innerHTML = `${createLine()}`;
+    problemNine.innerHTML = `${createLine()}`;
+    problemTen.innerHTML = `${createLine()}`;
+</script>
+</body>
+</html>
