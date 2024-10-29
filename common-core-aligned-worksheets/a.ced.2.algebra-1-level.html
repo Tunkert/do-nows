@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Core A.CED.2 Algebra I Level</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 01</h2>
+            <p class="scenario"></p>
+        </div>
+        <div class="problem">
+            <h2>Problem 02</h2>
+            <p class="scenario"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 03</h2>
+            <p class="scenario"></p>
+        </div>
+        <div class="problem">
+            <h2>Problem 04</h2>
+            <p class="scenario"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 05</h2>
+            <p class="scenario"></p>
+        </div>
+        <div class="problem">
+            <h2>Problem 06</h2>
+            <p class="scenario"></p>
+        </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 07</h2>
+            <p class="scenario"></p>
+        </div>
+        <div class="problem">
+            <h2>Problem 08</h2>
+            <p class="scenario"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2>Problem 09</h2>
+            <p class="scenario"></p>
+        </div>
+        <div class="problem">
+            <h2>Problem 10</h2>
+            <p class="scenario"></p>
+        </div>
+    </div>
+</div>
+<script>
+    // functions
+
+    let taxiScenario = () => {
+        let flatFee = Math.floor(Math.random() * 5) + 2;
+        let costPerMile = Math.floor(Math.random() * 5) + 2;
+        while (flatFee === costPerMile) {
+            flatFee = Math.floor(Math.random() * 5) + 2;
+            costPerMile = Math.floor(Math.random() * 5) + 2;
+        }
+
+        return `A taxi service charges a flat fee of \$${flatFee} plus \$${costPerMile} per mile driven. If <var>m</var> represents the miles driven, write an expression for the total cost of the ride.`;
+    }
+
+    let fieldTripScenario = () => {
+        const costOfBus = Math.floor(Math.random() * 100) + 200;
+        const collectedPerStudent = Math.floor(Math.random() * 10) + 10;
+
+        return `A school is organizing a field trip. Each student pays \$${collectedPerStudent}, and there's a cost of \$${costOfBus} for the bus. If <var>s</var> is the number of students attending, write an expression for the total revenue generated from the students.`;
+    }
+
+    let gardenScenario = () => {
+        let costOfFlowers = Math.floor(Math.random() * 9) + 9;
+        let vegetablePlants = Math.floor(Math.random() * 9) + 9;
+        while (costOfFlowers === vegetablePlants) {
+            costOfFlowers = Math.floor(Math.random() * 7) + 7;
+            vegetablePlants = Math.floor(Math.random() * 7) + 7;
+        }
+
+        return `A garden center sells plants at different prices. If you buy <var>x</var> flower plants at \$${costOfFlowers} and <var>y</var> vegetable plans at \$${vegetablePlants}, write an expression for the total cost of the plants.`;
+    }
+
+    let videoGameScenario = () => {
+        let costOfGame = Math.floor(Math.random() * 50) + 50;
+        let savePerWeek = Math.floor(Math.random() * 8) + 5;
+
+        let names = [
+            "Jimmy J. Jimmerson, Jr.",
+            "Donny D. Donster, the third",
+            "Timmy Von Timmerson",
+            "Sally S. Shoester, the second",
+            "Mary M. Marrington",
+            "Paul",
+            "Martin",
+        ]
+
+        let theName = names[Math.floor(Math.random() * names.length)];
+
+        return `${theName} is saving money for a video game that costs \$${costOfGame}. ${theName} already has <var>a</var> dollars saved and plans to save \$${savePerWeek} each week. Write an expression for the total amount of money ${theName} will have after <var>w</var> weeks.`;
+    }
+
+    let gymScenario = () => {
+        let monthlyFee = Math.floor(Math.random() * 10) + 10;
+        let yogaClassFee = Math.floor(Math.random() * 5) + 2;
+        return `A gym charges a monthly membership fee of \$${monthlyFee} and an additional \$${yogaClassFee} for each yoga class attended. If <var>y</var> represents the total amount of yoga classes attended in a month, write an expression for the total monthly cost.`;
+    }
+
+    for (let i = 0; i < 10; i++) {
+        // create containers for problems 1 through 10
+        const problemOne = document.querySelectorAll('.scenario')[0];
+        const problemTwo = document.querySelectorAll('.scenario')[1];
+        const problemThree = document.querySelectorAll('.scenario')[2];
+        const problemFour = document.querySelectorAll('.scenario')[3];
+        const problemFive = document.querySelectorAll('.scenario')[4];
+        const problemSix = document.querySelectorAll('.scenario')[5];
+        const problemSeven = document.querySelectorAll('.scenario')[6];
+        const problemEight = document.querySelectorAll('.scenario')[7];
+        const problemNine = document.querySelectorAll('.scenario')[8];
+        const problemTen = document.querySelectorAll('.scenario')[9];
+
+        // problems 1 and 2
+        problemOne.innerHTML = `${gymScenario()}`;
+        problemTwo.innerHTML = `${gymScenario()}`;
+
+        // problem 3 and 4
+        problemThree.innerHTML = `${taxiScenario()}`;
+        problemFour.innerHTML = `${taxiScenario()}`;
+
+        // problem 5 and 6
+        problemFive.innerHTML = `${fieldTripScenario()}`;
+        problemSix.innerHTML = `${fieldTripScenario()}`;
+
+        // problem 7 and 8
+        problemSeven.innerHTML = `${gardenScenario()}`;
+        problemEight.innerHTML = `${gardenScenario()}`;
+
+        // problem 9 and 10
+        problemNine.innerHTML = `${videoGameScenario()}`;
+        problemTen.innerHTML = `${videoGameScenario()}`;
+    }
+</script>
+</body>
+</html>
