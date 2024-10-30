@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,14 +89,14 @@
             costPerMile = Math.floor(Math.random() * 5) + 2;
         }
 
-        return `Un servicio de taxi cobra una tarifa plana de $${flatFee} más $${costPerMile} por milla recorrida. Si <var>m</var> representa las millas recorridas, escriba una expresión para el costo total del viaje.`;
+        return `Un servicio de taxi cobra una tarifa plana de \$${flatFee} más \$${costPerMile} por milla recorrida. Si <var>m</var> representa las millas recorridas, escriba una expresión para el costo total del viaje.`;
     }
 
     let fieldTripScenario = () => {
         const costOfBus = Math.floor(Math.random() * 100) + 200;
         const collectedPerStudent = Math.floor(Math.random() * 10) + 10;
 
-        return `Una escuela está organizando una excursión. Cada estudiante paga $${collectedPerStudent}, y hay un costo de $${costOfBus} por el autobús. Si <var>s</var> es el número de estudiantes que asisten, escriba una expresión para los ingresos totales generados por los estudiantes.`;
+        return `Una escuela está organizando una excursión. Cada estudiante paga \$${collectedPerStudent}, y hay un costo de \$${costOfBus} por el autobús. Si <var>s</var> es el número de estudiantes que asisten, escriba una expresión para los ingresos totales generados por los estudiantes.`;
     }
 
     let gardenScenario = () => {
@@ -107,7 +107,7 @@
             vegetablePlants = Math.floor(Math.random() * 7) + 7;
         }
 
-        return `Un centro de jardinería vende plantas a diferentes precios. Si compras <var>x</var> plantas de flores en $${costOfFlowers} y <var>y</var> planes de vegetales en $${vegetablePlants}, escribe una expresión para el costo total de las plantas.`;
+        return `Un centro de jardinería vende plantas a diferentes precios. Si compras <var>x</var> plantas de flores en \$${costOfFlowers} y <var>y</var> planes de vegetales en \$${vegetablePlants}, escribe una expresión para el costo total de las plantas.`;
     }
 
     let videoGameScenario = () => {
@@ -126,13 +126,13 @@
 
         let theName = names[Math.floor(Math.random() * names.length)];
 
-        return `${theName} está ahorrando dinero para un videojuego que cuesta $${costOfGame}. ${theName} ya tiene <var>un</var> dólar ahorrado y planea ahorrar $${savePerWeek} cada semana. Escribe una expresión para la cantidad total de dinero que ${theName} tendrá después de <var>w</var> semanas.`;
+        return `${theName} está ahorrando dinero para un videojuego que cuesta \$${costOfGame}. ${theName} ya tiene <var>un</var> dólar ahorrado y planea ahorrar \$${savePerWeek} cada semana. Escribe una expresión para la cantidad total de dinero que ${theName} tendrá después de <var>w</var> semanas.`;
     }
 
     let gymScenario = () => {
         let monthlyFee = Math.floor(Math.random() * 10) + 10;
         let yogaClassFee = Math.floor(Math.random() * 5) + 2;
-        return `Un gimnasio cobra una cuota mensual de membresía de $${monthlyFee} y una $${yogaClassFee} adicional por cada clase de yoga a la que asiste. Si <var>y</var> representa la cantidad total de clases de yoga a las que se asistió en un mes, escriba una expresión para el costo mensual total.`;
+        return `Un gimnasio cobra una cuota mensual de membresía de \$${monthlyFee} y una \$${yogaClassFee} adicional por cada clase de yoga a la que asiste. Si <var>y</var> representa la cantidad total de clases de yoga a las que se asistió en un mes, escriba una expresión para el costo mensual total.`;
     }
 
     for (let i = 0; i < 10; i++) {
