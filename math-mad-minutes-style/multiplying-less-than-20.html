@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subtracting Numbers Less Than 20 Mad Minutes Style </title>
+    <title>Multiplying Numbers Less Than 20 Mad Minutes Style </title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         .container {
@@ -146,13 +146,9 @@
     <script>
         for (let i = 0; i < 32; i++) {
             const problemParagraph = document.querySelectorAll('.problem p')[i];
-            let constantOne = Math.floor(Math.random() * 19) + 1;
-            let constantTwo = Math.floor(Math.random() * 19) + 1;
-            while (constantOne < constantTwo) {
-                constantOne = Math.floor(Math.random() * 19) + 1;
-                constantTwo = Math.floor(Math.random() * 19) + 1;
-            }
-            problemParagraph.innerHTML = `${constantOne} <br>&minus; ${constantTwo}`;
+            const constantOne = Math.floor(Math.random() * 19) + 1;
+            const constantTwo = Math.floor(Math.random() * 19) + 1;
+            problemParagraph.innerHTML = `${constantOne} <br>&times; ${constantTwo}`;
         }
     </script>
 </body>
