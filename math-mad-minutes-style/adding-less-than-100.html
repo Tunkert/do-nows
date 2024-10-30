@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Numbers Less Than 100 Mad Minutes Style </title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 120px;
+        }
+
+        .problem {
+            width: 5%;
+        }
+
+        .problem p {
+            text-align: right;
+            border-bottom: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+            <div class="problem">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        for (let i = 0; i < 32; i++) {
+            const problemParagraph = document.querySelectorAll('.problem p')[i];
+            const constantOne = Math.floor(Math.random() * 99) + 1;
+            const constantTwo = Math.floor(Math.random() * 99) + 1;
+            problemParagraph.innerHTML = `${constantOne} <br>+ ${constantTwo}`;
+        }
+    </script>
+</body>
+
+</html>
