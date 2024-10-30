@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is the Slope of the Graph in the xy-plane?</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 170px;
+            border-bottom: 7px dotted hotpink;
+            padding: 25px 0;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+        <div class="row">
+            <p class="question"></p>
+        </div>
+    </div>
+    <script>
+        for (let i = 0; i < 16; i++) {
+            let numerator = Math.floor(Math.random() * 19) + 10;
+            let denominator = Math.floor(Math.random() * 19) + 10;
+            let yIntercept = Math.floor(Math.random() * 19) + 10;
+            let yInterceptSign = Math.floor(Math.random() * 2);
+            while (numerator >= denominator) {
+                numerator = Math.floor(Math.random() * 19) + 10;
+                denominator = Math.floor(Math.random() * 19) + 10;
+            }
+            const question = document.querySelectorAll('.question')[i];
+            if (yInterceptSign === 0) {
+                question.textContent = `What is the slope of the graph \\( y = \\frac\{${numerator}x\}\{${denominator}\} - ${yIntercept} \\)`;
+            }
+            question.textContent = `What is the slope of the graph \\( y = \\frac\{${numerator}x\}\{${denominator}\} + ${yIntercept} \\)`;
+        }
+    </script>
+</body>
+</html>
