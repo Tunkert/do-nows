@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lines Point-Slope to Other Forms</title>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<style>
+			.container {
+				margin: 0 0.5in;
+			}
+
+			.row {
+				display: flex;
+				justify-content: space-between;
+				min-height: 300px;
+			}
+
+			.problem {
+				width: 45%;
+			}
+
+			.pb {
+				page-break-after: always;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+			</div>
+			<div class="pb"></div>
+			<div class="row">
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+				<div class="problem">
+					<h2></h2>
+					<p class="equation"></p>
+					<p class="instructions"></p>
+				</div>
+			</div>
+		</div>
+		<script>
+			for (let i = 0; i < 10; i++) {
+				const problemHeading = document.querySelectorAll('.problem h2')[i];
+				problemHeading.textContent = `Problem ${i + 1}`;
+				const xValue = Math.floor(Math.random() * 9) + 1;
+				const yValue = Math.floor(Math.random() * 9) + 1;
+				const slope = Math.floor(Math.random() * 9) + 1;
+				const equation = document.querySelectorAll('.equation')[i];
+				equation.textContent = `\\( y - ${yValue} = ${slope}(x - ${xValue}) \\)`;	
+				const instructions = document.querySelectorAll('.instructions')[i];
+				instructions.textContent = `Convert the line above into standard form and slope-intercept form.`;	
+			}
+		</script>
+	</body>
+</html>
