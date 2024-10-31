@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividing Mad Minutes 1</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 100px;
+        }
+
+        .problem p {
+            width: 30px;
+            text-align: right;
+            border-bottom: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+        <div class="problem">
+            <p></p>
+        </div>
+    </div>
+</div>
+<script>
+    for (let i = 0; i < 36; i++) {
+        const problem = document.querySelectorAll('.problem p')[i];
+        const divisor = Math.floor(Math.random() * 10) + 1;
+        const multiplier = Math.floor(Math.random() * 10) + 1;
+        const dividend = multiplier * divisor;
+        problem.innerHTML = `${dividend}<br>&divide;${divisor}`;
+    }
+</script>
+</body>
+</html>
