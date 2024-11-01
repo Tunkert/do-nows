@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lines of Any Form to Other Forms</title>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+.container { margin: 0 0.5in; }
+.row {display: flex; justify-content: space-between; min-height: 310px; }
+.problem { width: 45%; }
+.pb { page-break-after: always; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+            </div>
+            <div class="pb"></div>
+            <div class="row">
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+                <div class="problem">
+                    <h2></h2>
+                    <p>Identify what form the following line is in, then convert it to the other two forms.</p>
+                    <p class="equation"></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            let slopeIntercept = () => {
+                let slope = Math.floor(Math.random() * 10) + 1;
+                let yIntercept = Math.floor(Math.random() * 10) + 1;
+                let slopeSign = Math.floor(Math.random() * 2);
+                let yInterceptSign = Math.floor(Math.random() * 2);
+                if (slopeSign === 0) {
+                    slope *= -1;
+                }
+                if (yInterceptSign === 0) {
+                    yIntercept *= -1;
+                }
+                if (slope > 0) {
+                    if (yIntercept > 0) {
+                        return `\\( y = ${slope}x + ${yIntercept} \\)`;
+                    }
+                    return `\\( y = ${slope}x - ${-1 * yIntercept} \\)`;
+                }
+                if (yIntercept < 0) {
+                    return `\\( y = ${slope}x - ${-1 * yIntercept} \\)`;
+                }
+                return `\\( y = ${slope}x - ${-1 * yIntercept} \\)`;
+            }
+
+            let pointSlope = () => {
+                let y1 = Math.floor(Math.random() * 10) + 1;
+                let x1 = Math.floor(Math.random() * 10) + 1;
+                let slope = Math.floor(Math.random() * 10) + 1;
+                let y1Sign = Math.floor(Math.random() * 2);
+                let x1Sign = Math.floor(Math.random() * 2);
+                if (x1Sign === 0) {
+                    if (y1Sign === 0) {
+                        return `\\( y + ${y1} = ${slope}(x + ${x1}) \\)`;
+                    }
+                    return `\\( y - ${y1} = ${slope}(x + ${x1}) \\)`;
+                }
+                if (y1Sign === 0) {
+                    return `\\( y + ${y1} = ${slope}(x - ${x1}) \\)`;
+                }
+                return `\\( y - ${y1} = ${slope}(x - ${x1}) \\)`;
+            }
+
+            let standardForm = () => {
+                let a = Math.floor(Math.random() * 10) + 1;
+                let b = Math.floor(Math.random() * 10) + 1;
+                let c = Math.floor(Math.random() * 10) + 1;
+                let bSign = Math.floor(Math.random() * 2);
+                let cSign = Math.floor(Math.random() * 2);
+                if (bSign === 0) {
+                    if (cSign === 0) {
+                        return `\\( ${a}x + ${b}y = ${c} \\)`;
+                    }
+                    return `\\( ${a}x + ${b}y = -${c} \\)`;
+                }
+                if (cSign === 0) {
+                    return `\\( ${a}x - ${b}y = ${c} \\)`;
+                }
+                return `\\( ${a}x - ${b}y = -${c} \\)`;
+            }
+
+            for (let i=0; i < 10; i++) {
+                const equation = document.querySelectorAll('.equation')[i];
+                const equationPicker = Math.floor(Math.random() * 3);
+                if (equationPicker === 0) {
+                    equation.textContent = `${slopeIntercept()}`;
+                } else if (equationPicker === 1) {
+                    equation.textContent = `${pointSlope()}`;
+                } else {
+                    equation.textContent = `${standardForm()}`;
+                }
+            }
+        </script>
+    </body>
+</html>
