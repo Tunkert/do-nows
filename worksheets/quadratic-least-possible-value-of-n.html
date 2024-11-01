@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Least Possible Value of n</title>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+		<div class="problem">
+			<h2></h2>
+			<p class="equation"></p>
+			<p class="question"></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	for (let i = 0; i < 10; i++) {
+		let b = Math.floor(Math.random() * 30) + 10;
+		let bSign = Math.floor(Math.random() * 2); 
+		const equation = document.querySelectorAll('.equation')[i];
+		const question = document.querySelectorAll('.question')[i];
+		if (bSign === 0) {
+			equation.innerHTML = `x<sup>2</sup> - ${b}x + c = 0`; 
+		} else {
+			equation.innerHTML = `x<sup>2</sup> + ${b}x + c = 0`;
+		}
+		question.innerHTML = `In the given equation, <var>c</var> is a constant. The equation has no real solution if <var>c</var> &gt; <var>n</var>. What is the least possible value of <var>n</var>?`;
+	}
+</script>
+</body>
+</html>
