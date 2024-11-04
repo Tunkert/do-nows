@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Formula, a is greater than 1</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Use the Quadratic Formula to solve the following problems.</p>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="instructions"></p>
+                <p class="equation"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let createEquation = () => {
+            const a = Math.floor(Math.random() * 9) + 1;
+            let b = Math.floor(Math.random() * 9) + 1;
+            let c = Math.floor(Math.random() * 9) + 1;
+            let d = Math.floor(Math.random() * 9) + 1;
+            let bSign = Math.floor(Math.random() * 2);
+            let dSign = Math.floor(Math.random() * 2);
+            if (bSign === 0) {
+                b *= -1; 
+            }
+            if (dSign === 0) {
+                d *= -1; 
+            }
+            // (ax + b)(cx + d)
+            // acx^2 + adx + bcx + bd
+            // ac, ad + bc, bd
+            let firstCoefficient = a * c;
+            let secondCoefficient = a * d + b * c;
+            let lastConstant = b * d;
+            if (secondCoefficient > 0) {
+                if (lastConstant > 0) {
+                    return `${firstCoefficient}<var>x</var><sup>2</sup> + ${secondCoefficient}<var>x</var> + ${lastConstant} = 0`;
+                }
+                return `${firstCoefficient}<var>x</var><sup>2</sup> + ${secondCoefficient}<var>x</var> &minus; ${-1 * lastConstant} = 0`;
+            }
+            if (lastConstant > 0) {
+                return `${firstCoefficient}<var>x</var><sup>2</sup> &minus; ${-1 * secondCoefficient}<var>x</var> + ${lastConstant} = 0`;
+            }
+            return `${firstCoefficient}<var>x</var><sup>2</sup> &minus; ${-1 * secondCoefficient}<var>x</var> &minus; ${-1 * lastConstant} = 0`;
+        }
+
+        for (let i = 0; i < 10; i++) {
+            const problemHeading = document.querySelectorAll('.problem h2')[i];
+            problemHeading.textContent = `Problem ${i + 1}`;
+            const instructions = document.querySelectorAll('.problem .instructions')[i];
+            instructions.innerHTML = `Solve for <var>x</var>:`;
+            const equation = document.querySelectorAll('.problem .equation')[i];
+            equation.innerHTML = `${createEquation()}`;
+        }
+    </script>
+</body>
+
+</html>
