@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slope Intercept to Standard</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+</div> 
+<script>
+    let standardForm = () => {
+        const a = Math.floor(Math.random() * 9) + 1;
+        const b = Math.floor(Math.random() * 9) + 1;
+        const c = Math.floor(Math.random() * 9) + 1;
+        return `${a}x + ${b}x = ${c}`;
+    }
+    for (let i = 0; i < 10; i++) {
+        const problemHeading = document.querySelectorAll('.problem h2')[i];
+        problemHeading.textContent = `Problem ${i + 1}`;
+        const instructions = document.querySelectorAll('.problem .instructions')[i];
+        instructions.innerHTML = `Convert each of the lines from standard form to slope-intercept form, then sketch a graph of the line. <i>Convierte cada una de las rectas de la forma estándar a la forma pendiente-intersección y luego dibuja una gráfica de la recta.</i>`;
+        const equation = document.querySelectorAll('.equation')[i];
+        equation.innerHTML = `${standardForm()}`;
+    }
+</script>
+</body>
+</html>
