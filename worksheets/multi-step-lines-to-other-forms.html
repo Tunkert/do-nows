@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Lines to Other Forms</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+        
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Convert the following lines to the three forms of lines and specify each type.</p>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let createEquation = () => {
+            const coefficientOne = Math.floor(Math.random() * 9) + 1;
+            const coefficientTwo = Math.floor(Math.random() * 9) + 1;
+            const coefficientThree = Math.floor(Math.random() * 9) + 1;
+            const coefficientFour = Math.floor(Math.random() * 9) + 1;
+            const coefficientFive = Math.floor(Math.random() * 9) + 1;
+            const typeEquation = Math.floor(Math.random() * 3);
+            if (typeEquation === 0) {
+                return `${coefficientOne}x + ${coefficientTwo}x + ${coefficientThree}x + ${coefficientFour}y = ${coefficientFive}y`;
+            } else if (typeEquation === 1) {
+                return `${coefficientOne}x &minus; ${coefficientTwo}x + ${coefficientThree}x = ${coefficientFour}y &minus; ${coefficientFive}y`;
+            }
+            return `${coefficientOne}y &minus; ${coefficientTwo}x + ${coefficientThree}x = ${coefficientFour}x &minus; ${coefficientFive}y`;
+        }
+
+        for (let i = 0; i < 10; i++) {
+            const problemHeading = document.querySelectorAll('.problem h2')[i];
+            problemHeading.textContent = `Problem ${i + 1}`;
+            const equation = document.querySelectorAll('.equation')[i];
+            equation.innerHTML = `${createEquation()}`; 
+        }
+    </script>
+</body>
+</html>
