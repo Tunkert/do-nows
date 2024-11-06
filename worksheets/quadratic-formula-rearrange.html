@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Standard Form to Other Forms</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let createEquation = () => {
+            let a = Math.floor(Math.random() * 9) + 1;
+            let b = Math.floor(Math.random() * 9) + 1;
+            let aSign = Math.floor(Math.random() * 2);
+            let bSign = Math.floor(Math.random() * 2);
+            if (aSign === 0) {
+                a *= -1;
+            }
+            if (bSign === 0) {
+                b *= -1;
+            }
+            // (x - a)(x - b) = x^2 - ax - bx + ab
+            // midCoefficient = -(a + b), lastConstant = ab
+            let midCoefficient = -1 * (a + b);
+            let lastConstant = a * b;
+            let typeProblem = Math.floor(Math.random() * 3);
+            if (typeProblem === 0) {
+                if (midCoefficient > 0) {
+                    if (lastConstant > 0) {
+                        return `<var>x</var><sup>2</sup> + ${midCoefficient}x + ${lastConstant} = 0`;
+                    }
+                    return `<var>x</var><sup>2</sup> + ${midCoefficient}x &minus; ${-1 * lastConstant} = 0`;
+                }
+                return `<var>x</var><sup>2</sup> &minus; ${-1 * midCoefficient}x &minus; ${-1 * lastConstant} = 0`;
+            } else if (typeProblem === 1) {
+                if (midCoefficient > 0) {
+                    if (lastConstant > 0) {
+                        return `<var>x</var><sup>2</sup> + ${midCoefficient}x = &minus; ${lastConstant}`;
+                    }
+                    return `<var>x</var><sup>2</sup> + ${midCoefficient}x = ${-1 * lastConstant}`;
+                }
+                return `<var>x</var><sup>2</sup> &minus; ${-1 * midCoefficient}x = ${-1 * lastConstant}`;
+            } else {
+                if (midCoefficient > 0) {
+                    if (lastConstant > 0) {
+                        return `<var>x</var><sup>2</sup> + ${lastConstant} = ${midCoefficient}x`;
+                    }
+                    return `<var>x</var><sup>2</sup> &minus; ${-1 * lastConstant} = ${midCoefficient}x`;
+                }
+                return `<var>x</var><sup>2</sup> &minus; ${-1 * lastConstant} = ${-1 * midCoefficient}x`;
+            }
+        }
+
+        for (let i = 0; i < 10; i++) {
+            const problemHeading = document.querySelectorAll('.problem h2')[i];
+            problemHeading.textContent = `Problem ${i + 1}`;
+            const equation = document.querySelectorAll('.equation')[i];
+            equation.innerHTML = `${createEquation()}`;
+        }
+    </script>
+</body>
+</html>
