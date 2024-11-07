@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Formula Quiz 1</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 450px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="pb"></div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+        <div class="problem">
+            <h2></h2>
+            <p class="instructions"></p>
+            <p class="equation"></p>
+        </div>
+    </div>
+</div> 
+<script>
+    let regularQuadratic = () => {
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+            a *= -1;
+        }
+        if (bSign === 0) {
+            b *= -1;
+        }
+        // (x - a)(x - b) = x^2 - (a + b)x + ab
+        let middleCoefficient = -1 * (a + b);
+        let lastConstant = a * b;
+        if (middleCoefficient < 0) {
+            if (lastConstant < 0) {
+                return `x<sup>2</sup> &minus; ${middleCoefficient * -1}x &minus; ${lastConstant * -1} = 0`;
+            }
+            return `x<sup>2</sup> &minus; ${middleCoefficient * -1}x + ${lastConstant * 1} = 0`;
+        }
+        if (lastConstant < 0) {
+            return `x<sup>2</sup> + ${middleCoefficient * 1}x &minus; ${lastConstant * -1} = 0`;
+        }
+        return `x<sup>2</sup> + ${middleCoefficient * 1}x + ${lastConstant * 1} = 0`;
+    }
+
+    let irregularQuadratic = () => {
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+            a *= -1;
+        }
+        if (bSign === 0) {
+            b *= -1;
+        }
+        // (x - a)(x - b) = x^2 - (a + b)x + ab
+        let middleCoefficient = -1 * (a + b);
+        let lastConstant = a * b;
+        if (middleCoefficient < 0) {
+            if (lastConstant < 0) {
+                return `x<sup>2</sup> &minus; ${middleCoefficient * -1}x = ${lastConstant * -1}`;
+            }
+            return `${middleCoefficient * -1}x + ${lastConstant * 1} = &minus;x<sup>2</sup> &minus;`;
+        }
+        if (lastConstant < 0) {
+            return `x<sup>2</sup> &minus; ${lastConstant * -1} = &minus;${middleCoefficient * 1}x`;
+        }
+        return `x<sup>2</sup> + ${middleCoefficient * 1}x = &minus;${lastConstant * 1}`;
+    }
+
+    let aGreaterThanOneQuadratic = () => {
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let c = Math.floor(Math.random() * 9) + 1;
+        let d = Math.floor(Math.random() * 9) + 1;
+
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        let dSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+            a *= -1;
+        }
+        if (bSign === 0) {
+            b *= -1;
+        }
+        if (cSign === 0) {
+            c *= -1;
+        }
+        if (dSign === 0) {
+            c *= -1;
+        }
+        // (ax - b)(cx - d) = acx^2 - (ad + bc)x + bd 
+        let firstCoefficient = a * c;
+        let middleCoefficient = -1 * (a * d + b * c);
+        let lastConstant = b * d;
+        if (middleCoefficient < 0) {
+            if (lastConstant < 0) {
+                return `${firstCoefficient}<sup>2</sup> &minus; ${middleCoefficient * -1}x &minus; ${lastConstant * -1} = 0`;
+            }
+            return `${firstCoefficient}x<sup>2</sup> &minus; ${middleCoefficient * -1}x + ${lastConstant * 1} = 0`;
+        }
+        if (lastConstant < 0) {
+            return `${firstCoefficient}x<sup>2</sup> + ${middleCoefficient * 1}x &minus; ${lastConstant * -1} = 0`;
+        }
+        return `${firstCoefficient}x<sup>2</sup> + ${middleCoefficient * 1}x + ${lastConstant * 1} = 0`;
+
+    }
+
+    for (let i = 0; i < 8; i++) {
+        const problemHeading = document.querySelectorAll('.problem h2')[i];
+        const instructions = document.querySelectorAll('.problem .instructions')[i];
+        const equation = document.querySelectorAll('.problem .equation')[i];
+        problemHeading.textContent = `Problem ${i + 1}`;
+        instructions.innerHTML = `Solve the equation for <var>x</var> using the Quadratic Formula. <b><u>SHOW ALL WORK</u></b>. <em>No work = no credit</em>.`;
+        const problemType = Math.floor(Math.random() * 3);
+        if (problemType === 0) {
+            equation.innerHTML = `${regularQuadratic()}`;
+        } else if (problemType === 1) {
+            equation.innerHTML = `${irregularQuadratic()}`;
+        } else {
+            equation.innerHTML = `${aGreaterThanOneQuadratic()}`;
+        }
+    }
+</script>
+</body>
+</html>
