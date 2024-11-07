@@ -1,0 +1,102 @@
+<!doctype html>
+<html en="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard to Slope Intercept Quiz</title>
+    <style>
+.container { margin: 0 0.5in; }
+.row { display: flex; justify-content: space-between; min-height: 450px; }
+.problem { width: 45%; }
+.pb { page-break-after: always; }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let createEquation = () => {
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let c = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+          a *= -1;
+        }
+        if (bSign === 0) {
+          b *= -1;
+        }
+        if (cSign === 0) {
+          c *= -1;
+        }
+        if (b > 0) {
+          return `${a}x + ${b}y = ${c}`;
+        }
+        return `${a}x &minus; ${-1 * b}y = ${c}`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const problemHeading = document.querySelectorAll('.problem h2')[i];
+        problemHeading.textContent = `Problem ${i + 1}`;
+        const instructions = document.querySelectorAll('.problem .instructions')[i];
+        instructions.textContent = `Convert the following lines from standard form to slope intercept form, then sketch the line. (Convierta las siguientes líneas de la forma estándar a la forma pendiente-intersección y luego dibuje la línea.)`;
+        const equation = document.querySelectorAll('.problem .equation')[i];
+        equation.innerHTML = `${createEquation()}`;
+      }
+    </script>
+  </body>
+</html>
