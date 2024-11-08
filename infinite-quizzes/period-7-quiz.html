@@ -1,0 +1,99 @@
+<!doctype html>
+<html en="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period 7 Quiz</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+.container { margin: 0 0.5in; }
+.row { display: flex; justify-content: space-between; min-height: 450px; }
+.problem { width: 45%; }
+.pb { page-break-after: always; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let createEquation = () => {
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let c = Math.floor(Math.random() * 9) + 1;
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        if (bSign === 0) {
+          b *= -1;
+        }
+
+        if (cSign === 0) {
+          c *= -1;
+        }
+        if (b > 0) {
+          return `\\( ${a}x + ${b}y = ${c} \\)`;
+        }
+        return `\\( ${a}x - ${-1 * b}y = ${c} \\)`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const problemHeading = document.querySelectorAll('.problem h2')[i];
+        const instructions = document.querySelectorAll('.instructions')[i];
+        const equation = document.querySelectorAll('.equation')[i];
+        problemHeading.textContent = `Problem ${i + 1}`;
+        instructions.textContent = `Convert the line to slope-intercept form (y = mx + b), then sketch the graph of the line. (Convierte la recta a la forma pendiente-intersección (y = mx + b), luego dibuja la gráfica de la recta.)`;
+        equation.textContent = `${createEquation()}`;
+      }
+    </script>
+  </body>
+</html>
