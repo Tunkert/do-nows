@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Formula, No HTML</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      .container {
+        margin: 0 0.5in;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        min-height: 350px;
+      }
+
+      .problem {
+        width: 45%;
+      }
+
+      .pb {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="equation"></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let createSimpleEquation = () => {
+        //(x - a)(x - b)
+        // x^2 - (a + b)x + ab, middleCoefficient = -1 * (a + b), lastConstant = a * b;
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+          a *= -1;
+        }
+        if (bSign === 0) {
+          b *= -1;
+        }
+        let middleCoefficient = -1 * (a + b);
+        let lastConstant = a * b;
+        if (middleCoefficient > 0) {
+          if (lastConstant > 0) {
+            return `\\( x^2 + ${middleCoefficient}x + ${lastConstant} = 0 \\)`;
+          } else {
+            return `\\( x^2 + ${middleCoefficient}x - ${-1 * lastConstant} = 0 \\)`;
+          }
+        }
+        if (lastConstant > 0) {
+          return `\\( x^2 - ${-1 * middleCoefficient}x + ${lastConstant} = 0 \\)`;
+        }
+        return `\\( x^2 - ${-1 * middleCoefficient}x - ${-1 * lastConstant} = 0 \\)`;
+      }
+
+      let createHarderEquation = () => {
+
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let c = Math.floor(Math.random() * 9) + 1;
+        let d = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        let dSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+          a *= -1;
+        }
+        if (bSign === 0) {
+          b *= -1;
+        }
+        if (cSign === 0) {
+          c *= -1;
+        }
+        if (dSign === 0) {
+          d *= -1;
+        }
+        //(ax - b)(cx - d) = 0, acx^2 - (ad + bc)x + bd
+        let firstCoefficient = a * c;
+        let middleCoefficient = -1 * (a * d + b * c);
+        let lastConstant = b * d;
+        if (middleCoefficient > 0) {
+          if (lastConstant > 0) {
+            return `\\( ${firstCoefficient}x^2 + ${middleCoefficient}x + ${lastConstant} = 0 \\)`;
+          } else {
+            return `\\( ${firstCoefficient}x^2 + ${middleCoefficient}x - ${-1 * lastConstant} = 0 \\)`;
+          }
+        }
+        if (lastConstant > 0) {
+          return `\\( ${firstCoefficient}x^2 - ${-1 * middleCoefficient}x + ${lastConstant} = 0 \\)`;
+        }
+        return `\\( ${firstCoefficient}x^2 - ${-1 * middleCoefficient}x - ${-1 * lastConstant} = 0 \\)`;
+      }
+
+      let createNotPerfectSquare = () => {
+        // creates a function where b^2 - 4ac is not a perfect square
+        let a = Math.floor(Math.random() * 9) + 1;
+        let b = Math.floor(Math.random() * 9) + 1;
+        let c = Math.floor(Math.random() * 9) + 1;
+        let aSign = Math.floor(Math.random() * 2);
+        let bSign = Math.floor(Math.random() * 2);
+        let cSign = Math.floor(Math.random() * 2);
+        if (aSign === 0) {
+          a *= -1;
+        }
+        if (bSign === 0) {
+          b *= -1;
+        }
+        if (cSign === 0) {
+          c *= -1;
+        }
+        let discriminant = b * b - 4 * a * c;
+        while (discriminant < 0) {
+          a = Math.floor(Math.random() * 9) + 1;
+          b = Math.floor(Math.random() * 9) + 1;
+          c = Math.floor(Math.random() * 9) + 1;
+          aSign = Math.floor(Math.random() * 2);
+          bSign = Math.floor(Math.random() * 2);
+          cSign = Math.floor(Math.random() * 2);
+          if (aSign === 0) {
+            a *= -1;
+          }
+          if (bSign === 0) {
+            b *= -1;
+          }
+          if (cSign === 0) {
+            c *= -1;
+          }
+          discriminant = b * b - 4 * a * c;
+        }
+        if (b > 0) {
+          if (c > 0) {
+            return `\\( ${a}x^2 + ${b}x + ${c} = 0 \\)`;
+          }
+          return `\\( ${a}x^2 + ${b}x - ${-1 * c} = 0 \\)`;
+        }
+        if (c > 0) {
+          return `\\( ${a}x^2 - ${-1 * b}x + ${c} = 0 \\)`;
+        }
+        return `\\( ${a}x^2 - ${-1 * b}x - ${-1 * c} = 0 \\)`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+        const equation = document.querySelectorAll('.equation')[i];
+        const equationType = Math.floor(Math.random() * 3);
+        if (equationType === 0) {
+          equation.textContent = `${createSimpleEquation()}`;
+        } else if (equationType === 1) {
+          equation.textContent = `${createHarderEquation()}`;
+        } else {
+          equation.textContent = `${createNotPerfectSquare()}`;
+        }
+      }
+    </script>
+  </body>
+</html>
