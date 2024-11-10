@@ -22,4 +22,4 @@ Enjoy!!!!
 
 ## Coming Soon!
 
-More info about the additional resources included!
+More info about the additional resources included!!!
