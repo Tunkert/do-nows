@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percent of Blocks, Perimeter of Square</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 220px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="question"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let percentOfBlocks = () => {
+            const percent = (Math.floor(Math.random() * 9) + 1) * 10; 
+            const numberOfBlocks = (Math.floor(Math.random() * 20) + 1) * 10;
+
+            colors = [
+                "light green",
+                "purple",
+                "asphalt grey",
+                "dark blue",
+                "red-orange",
+                "maroon",
+                "hot pink",
+                "neon-green",
+            ];
+
+            const theColor = colors[Math.floor(Math.random() * colors.length)];
+
+            return `A container has ${numberOfBlocks} blocks, ${percent}% of which are ${theColor}. How many block are ${theColor}?`;
+        }
+
+        let perimeterOfSquare = () => {
+            const sideLength = Math.floor(Math.random() * 20) + 11;
+            const units = [
+                "meters",
+                "yards",
+                "feet",
+                "centimeters",
+            ];
+
+            const theUnit = units[Math.floor(Math.random() * units.length)];
+            return `The side of a square is ${sideLength} ${theUnit} long. What is the perimeter of the square?`;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const headingOne = document.querySelectorAll('.problem h2')[2 * i];
+            const headingTwo = document.querySelectorAll('.problem h2')[2 * i + 1];
+            headingOne.textContent = `Problem 1`;
+            headingTwo.textContent = `Problem 2`;
+
+            const questionOne = document.querySelectorAll('.question')[2 * i];
+            const questionTwo = document.querySelectorAll('.question')[2 * i + 1];
+            questionOne.textContent = `${percentOfBlocks()}`;
+            questionTwo.textContent = `${perimeterOfSquare()}`;
+        }
+    </script>
+</body>
+</html>
