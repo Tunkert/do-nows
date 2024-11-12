@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Formula, Non-Perfect Square Roots</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 420px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+            <div class="problem">
+                <h2></h2>
+                <p class="equation"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let createNonPerfectSquare = () => {
+            let a = Math.floor(Math.random() * 9) + 1;
+            let b = Math.floor(Math.random() * 9) + 1;
+            let c = Math.floor(Math.random() * 9) + 1;
+
+            while ((Math.sqrt((b * b - 4 * a * c)) % 1 === 0) || ((b * b - 4 * a * c) < 1)) {
+                a = Math.floor(Math.random() * 9) + 1;
+                b = Math.floor(Math.random() * 9) + 1;
+                c = Math.floor(Math.random() * 9) + 1;
+            }
+
+            return `\\( ${a}x^2 + ${b}x + ${c} = 0 \\)`;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const heading = document.querySelectorAll('.problem h2')[i];
+            heading.textContent = `Problem ${i + 1}`;
+            const equation = document.querySelectorAll('.equation')[i];
+            equation.textContent = `${createNonPerfectSquare()}`;
+        }
+    </script>
+</body>
+</html>
