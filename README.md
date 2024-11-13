@@ -20,6 +20,6 @@ These files start with quiz (or worksheet). Each time you refresh a new quiz ver
 
 Enjoy!!!!
 
-## Coming Soon!
+## Python Programs
 
-More info about the additional resources included!!!
+Python programs have just been added! These require python to be installed on your system. You can then run these programs and they will generate HTML. From here you can print these HTML files to PDF. These files are also great for STEM students wanting to see a real world application of python!
