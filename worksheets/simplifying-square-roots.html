@@ -1,0 +1,97 @@
+<!doctype html>
+<html en="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplifying Square Roots</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+.container { margin: 0 0.5in; }
+.row { display: flex; justify-content: space-between; min-height: 450px; }
+.problem { width: 45%; }
+.pb { page-break-after: always; }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p class="instructions"></p>
+          <p class="equation"></p>
+        </div>
+      </div>
+
+    </div>
+    <script>
+      let getNonPerfectSquare = () => {
+        let num;
+        let isPerfectSquare = true;
+
+        while (isPerfectSquare) {
+          num = Math.floor(Math.random() * 200) + 30;
+          let sqrt = Math.sqrt(num);
+          if (sqrt % 1 !== 0) {
+            isPerfectSquare = false;
+          }
+        }
+
+        return num;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+        const equation = document.querySelectorAll('.equation')[i];
+        equation.textContent = `\\( \\sqrt\{${getNonPerfectSquare()}\} \\)`;
+        const instructions = document.querySelectorAll('.instructions')[i];
+        instructions.textContent = `Simplify the square root as much as possible.`;
+      }
+
+    </script>
+  </body>
+</html>
