@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSAT - What Expression is Equivalent?</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 220px;
+            border-bottom: 7px dotted hotpink;
+        }
+
+        .possible-solution {
+            list-style: lower-alpha;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="instructions"></p>
+            <p class="expression"></p>
+            <ul>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+                <li class="possible-solution"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let createOriginalExpression = (a, b) => {
+            return `\\( ${a}x + ${b}x \\)`;
+        }
+
+        let createCorrectSolution = (a, b) => {
+            return `\\( ${a + b}x \\)`;
+        }
+
+        let createIncorrectSolutionOne = (a, b) => {
+            return `\\( ${a * b}x \\)`;
+        }
+
+        let createIncorrectSolutionTwo = (a, b) => {
+            return `\\( ${a - b}x \\)`;
+        }
+
+        let createIncorrectSolutionThree = (a, b) => {
+            return `\\( ${a / b}x \\)`;
+        }
+
+        for (let i = 0; i < 16; i++) {
+            const instructions = document.querySelectorAll('.instructions')[i];
+            const expression = document.querySelectorAll('.expression')[i];
+            const possibleSolutionOne = document.querySelectorAll('.possible-solution')[4 * i];
+            const possibleSolutionTwo = document.querySelectorAll('.possible-solution')[4 * i + 1];
+            const possibleSolutionThree = document.querySelectorAll('.possible-solution')[4 * i + 2];
+            const possibleSolutionFour = document.querySelectorAll('.possible-solution')[4 * i + 3];
+            const b = Math.floor(Math.random() * 9) + 5;
+            const a = b * ((Math.floor(Math.random() * 5) + 1) * 10);
+            instructions.textContent = `Which expression is equivalent to `;
+            expression.textContent = createOriginalExpression(a, b) + '?';
+            const solutionOrder = Math.floor(Math.random() * 4);
+            if (solutionOrder === 0) {
+                possibleSolutionOne.textContent = createCorrectSolution(a, b);
+                possibleSolutionTwo.textContent = createIncorrectSolutionOne(a, b);
+                possibleSolutionThree.textContent = createIncorrectSolutionTwo(a, b);
+                possibleSolutionFour.textContent = createIncorrectSolutionThree(a, b);
+            } else if (solutionOrder === 1) {
+                possibleSolutionOne.textContent = createIncorrectSolutionOne(a, b);
+                possibleSolutionTwo.textContent = createCorrectSolution(a, b);
+                possibleSolutionThree.textContent = createIncorrectSolutionTwo(a, b);
+                possibleSolutionFour.textContent = createIncorrectSolutionThree(a, b);
+            } else if (solutionOrder === 2) {
+                possibleSolutionOne.textContent = createIncorrectSolutionTwo(a, b);
+                possibleSolutionTwo.textContent = createIncorrectSolutionThree(a, b);
+                possibleSolutionThree.textContent = createCorrectSolution(a, b);
+                possibleSolutionFour.textContent = createIncorrectSolutionThree(a, b);
+            } else {
+                possibleSolutionOne.textContent = createIncorrectSolutionTwo(a, b);
+                possibleSolutionTwo.textContent = createIncorrectSolutionThree(a, b);
+                possibleSolutionThree.textContent = createIncorrectSolutionOne(a, b);
+                possibleSolutionFour.textContent = createCorrectSolution(a, b);
+            }
+        }
+    </script>
+</body>
+</html>
