@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>If x is what is expression</title>
+	<style type="text/css">
+		.container {
+			margin: 0 0.5in;
+		}
+
+		.row {
+			min-height: 220px;
+			border-bottom: 7px dotted hotpink;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="pb"></div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+	<div class="row">
+		<p class="problem"></p>
+	</div>
+</div>
+<script type="text/javascript">
+	let createProblem = () => {
+		const xValue = Math.floor(Math.random() * 40) + 40;
+		const constantValue = Math.floor(Math.random() * 10) + 5;
+		return `If x = ${xValue}, what is the value of x + ${constantValue}? Si x = ${xValue}, ¿cuál es el valor de x + ${constantValue}?`;
+	}
+
+	for (let i = 0; i < 8; i++) {
+		const problem = document.querySelectorAll('.problem')[i];
+		problem.textContent = createProblem();
+	}
+</script>
+</body>
+</html>
