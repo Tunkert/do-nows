@@ -24,3 +24,4 @@ for i in range(16):
 
 
 f.write(formatting_strings.close_string)
+f.close()
