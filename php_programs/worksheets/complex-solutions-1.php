@@ -66,12 +66,19 @@ function create_quadratic() {
             echo $problem;
             echo "\n</div>\n";
             echo "</div>\n";
-            if (($i + 1) % 2 === 0) {
+            if ((($i + 1) % 2 === 0) && ($i < 3)) {
                 echo "\n<div class='pb'></div>\n";
             };
         };
 
         ?>
+
+        <script>
+            let refreshPage = () => {
+                location.reload();
+            }
+        </script>
+        <button onclick="refreshPage();">Refresh Page</button>
     </div>
 </body>
 </html>
