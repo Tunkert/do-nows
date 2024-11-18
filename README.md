@@ -20,6 +20,6 @@ These files start with quiz (or worksheet). Each time you refresh a new quiz ver
 
 Enjoy!!!!
 
-## Python Programs
+## Python and Ruby Programs
 
-Python programs have just been added! These require python to be installed on your system. You can then run these programs and they will generate HTML. From here you can print these HTML files to PDF. These files are also great for STEM students wanting to see a real world application of python!
+Python and ruby programs have just been added! These require python (or ruby if you're using a ruby program) to be installed on your system. You can then run these programs and they will generate HTML. From here you can print these HTML files to PDF. These files are also great for STEM students wanting to see a real world application of python and/or ruby!
