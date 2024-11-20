@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Formula All Forms </title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      .container {
+        margin: 0 0.5in;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        min-height: 420px;
+      }
+
+      .problem {
+        width: 45%;
+      }
+
+      .pb {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let createNumber = () => {
+        let myNumber = Math.floor(Math.random() * 5) + 1;
+        let myNumberSign = Math.floor(Math.random() * 2);
+        if (myNumberSign === 0) {
+          myNumber *= -1;
+        }
+        return myNumber;
+      }
+
+      let createRegularQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let discriminant = Math.pow(b, 2) - 4 * a * c;
+        while (Math.sqrt(discriminant) % 1 !== 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          discriminant = Math.pow(b, 2) - 4 * a * c;
+        }
+        return `\\( ${a}x^2 + ${b}x + ${c} = 0 \\)`;
+      }
+
+      let creaetNonPerfectQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let discriminant = Math.pow(b, 2) - 4 * a * c;
+        while (Math.sqrt(discriminant) % 1 === 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          discriminant = Math.pow(b, 2) - 4 * a * c;
+        }
+        return `\\( ${a}x^2 + ${b}x + ${c} = 0 \\)`;
+      }
+
+      let createComplexQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let discriminant = Math.pow(b, 2) - 4 * a * c;
+        while (discriminant >= 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          discriminant = Math.pow(b, 2) - 4 * a * c;
+        }
+        return `\\( ${a}x^2 + ${b}x + ${c} = 0 \\)`;
+      }
+
+      let semiRegularQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        return `\\( ${a}x^2 + ${b}x = ${-1 * c} \\)`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+        const problem = document.querySelectorAll('.problem p')[i];
+        const problemType = Math.floor(Math.random() * 4);
+        if (problemType === 0) {
+          problem.textContent = createRegularQuadratic();
+        } else if (problemType === 1) {
+          problem.textContent = semiRegularQuadratic();
+        } else if (problemType === 2) {
+          problem.textContent = createComplexQuadratic();
+        } else {
+          problem.textContent = creaetNonPerfectQuadratic();
+        }
+      }
+    </script>
+  </body>
+</html>
