@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Formula - All Forms </title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            min-height: 420px;
+        }
+
+        .problem {
+            width: 45%;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+          </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <button onclick="refreshPage()">Refresh problems!</button>
+    </div>
+    <script type="text/javascript">
+      let createNumber = () => {
+        let aNumber = Math.floor(Math.random() * 9) + 1;
+        let aNumberSign = Math.floor(Math.random() * 2);
+        if (aNumberSign === 0) {
+          aNumber *= -1;
+        }
+
+        return aNumber;
+      }
+
+      let createRegularQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let d = createNumber();
+        while ((b * b - 4 * a * c) < 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          d = createNumber();
+        }
+        // (ax + b)(cx + d) = acx^2 + (bc + da)x + bd
+        let firstCoefficient = a * c;
+        let secondCoefficient = b * c + d * a;
+        let lastConstant = b * d;
+        return `\\( ${firstCoefficient}x^2 + ${secondCoefficient}x + ${lastConstant} = 0 \\)`
+      }
+
+      let createNonSquareRootQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let d = createNumber();
+        let discriminant = b * b - 4 * a * c;
+        while (Math.sqrt(discriminant) % 1 === 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          d = createNumber();
+          discriminant = b * b - 4 * a * c;
+        }
+        let firstCoefficient = a * c;
+        let secondCoefficient = b * c + d * a;
+        let lastConstant = b * d;
+        return `\\( ${firstCoefficient}x^2 + ${secondCoefficient}x + ${lastConstant} = 0 \\)`
+      }
+
+      let createComplexQuadratic = () => {
+        let a = createNumber();
+        let b = createNumber();
+        let c = createNumber();
+        let d = createNumber();
+        let discriminant = b * b - 4 * a * c;
+        while (discriminant >= 0) {
+          a = createNumber();
+          b = createNumber();
+          c = createNumber();
+          d = createNumber();
+          discriminant = b * b - 4 * a * c;
+        }
+        let firstCoefficient = a * c;
+        let secondCoefficient = b * c + d * a;
+        let lastConstant = b * d;
+        return `\\( ${firstCoefficient}x^2 + ${secondCoefficient}x + ${lastConstant} = 0 \\)`
+      }
+
+      let refreshPage = () => {
+        location.reload();
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+        const problem = document.querySelectorAll('.problem p')[i];
+        const problemType = Math.floor(Math.random() * 3);
+        if (problemType === 0) {
+          problem.textContent = createRegularQuadratic();
+        } else if (problemType === 1) {
+          problem.textContent = createNonSquareRootQuadratic();
+        } else {
+          problem.textContent = createComplexQuadratic();
+        }
+      }
+    </script>
+  </body>
+</html>
