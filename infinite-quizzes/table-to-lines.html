@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tables to Lines - Algebra I </title>
+    <style>
+      .container {
+        margin: 0 0.5in;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        min-height: 420px;
+      }
+
+      .problem {
+        width: 45%;
+      }
+
+      .pb {
+        page-break-after: always;
+      }
+
+      table, tr th, tr td {
+        border: 1px solid #333;
+        border-collapse: collapse;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>From the tables provided write the three forms of the line and label each. Also sketch a graph of the line. Make sure you sketch it <b>like a BOSS</b>.</p>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let createNumber = () => {
+        let myNumber = Math.floor(Math.random() * 9) + 2;
+        let myNumberSign = Math.floor(Math.random() * 2);
+        if (myNumberSign === 0) {
+          myNumber *= -1;
+        }
+        return myNumber;
+      }
+
+      let createTable = () => {
+        let initialXValue = createNumber();
+        let initialYValue = createNumber();
+        let slope = createNumber();
+        let secondXValue = initialXValue + 1;
+        let thirdXValue = initialXValue + 2;
+        let secondYValue = initialYValue + slope;
+        let thirdYValue = initialYValue + 2 * slope;
+        return `<table>\n<tr>\n<th>x</th>\n<th>y</th>\n<tr>\n<td>${initialXValue}</td>\n<td>${initialYValue}</td>\n</tr>\n<tr>\n<td>${secondXValue}</td>\n<td>${secondYValue}</td>\n</tr>\n<tr>\n<td>${thirdXValue}</td>\n<td>${thirdYValue}</td>\n</tr>`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const heading = document.querySelectorAll('.problem h2')[i];
+        heading.textContent = `Problem ${i + 1}`;
+        const problem = document.querySelectorAll('.problem div')[i];
+        problem.innerHTML = createTable();
+      }
+    </script>
+  </body>
+</html>
