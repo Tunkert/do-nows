@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Percent of 100 / If x is </title>
+    <style>
+      .container {
+        margin: 0 0.5in;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        min-height: 220px;
+        border-bottom: 7px dotted hotpink;
+      }
+
+      .problem {
+        width: 45%;
+      }
+
+      .pb {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="pb"></div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="problem">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let generateNumber = () => {
+        let myNumber = Math.floor(Math.random() * 85) + 5;
+        return myNumber;
+      }
+
+      let percentOfHundred = () => {
+        const theNumber = generateNumber();
+        return `What is ${theNumber}% of 100? ¿cuanto es el ${theNumber}% de 100?`;
+      }
+
+      let ifXIs = () => {
+        const xValue = generateNumber();
+        const additionalValue = generateNumber();
+        return `If x = ${xValue}, what is x + ${additionalValue}? Si x = ${xValue}, ¿cuánto es x + ${additionalValue}?`;
+      }
+
+      for (let i = 0; i < 8; i++) {
+        const headingOne = document.querySelectorAll('.problem h2')[2 * i];
+        const headingTwo = document.querySelectorAll('.problem h2')[2 * i + 1];
+        const problemOne = document.querySelectorAll('.problem p')[2 * i];
+        const problemTwo = document.querySelectorAll('.problem p')[2 * i + 1];
+        headingOne.textContent = `Problem ${2 * i + 1}`;
+        headingTwo.textContent = `Problem ${2 * i + 2}`;
+        problemOne.textContent = percentOfHundred();
+        problemTwo.textContent = ifXIs();
+      }
+    </script>
+  </body>
+</html>
