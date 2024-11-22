@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posters Per Hour</title>
+    <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <button onclick="refreshPage()">Refresh problems</button>
+      <div class="row">
+        <p class="question"></p>
+      </div>
+      <div class="row">
+        <p class="question"></p>
+      </div>
+      <div class="row">
+        <p class="question"></p>
+      </div>
+      <div class="row">
+        <p class="question"></p>
+      </div>
+    </div> 
+    <script>
+      let refreshPage = () => {
+        location.reload();
+      }
+
+      let createNumber = () => {
+        return ((Math.floor(Math.random() * 9) + 1) * 10) + Math.floor(Math.random() * 9);
+      }
+
+      let createPosterProblem = () => {
+        let postersPerMinute = createNumber();
+        return `A printer produces posters at a constant rate of ${postersPerMinute} posters per minute. At what rate, in posters per <u>hour</u>, does the printer produce the posters?`;
+      }
+
+      for(let i = 0; i < 4; i++) {
+        const question = document.querySelectorAll('.row p')[i];
+        question.innerHTML = createPosterProblem();
+      }
+    </script>
+  </body>
+</html>
