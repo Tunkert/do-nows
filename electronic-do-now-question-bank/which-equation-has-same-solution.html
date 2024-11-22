@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which equation has the same solution</title>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="refreshPage()">Refresh the problems!</button>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+  </div> 
+  <script>
+    let refreshPage = () => {
+      location.reload();
+    }
+
+    let createNumber = () => {
+      const theNumber = Math.floor(Math.random() * 9) + 2;
+      return theNumber;
+    }
+
+    let createProblem = () => {
+      const firstCoefficient = createNumber();
+      const theConstant = createNumber();
+      const xValue = createNumber();
+      const total = firstCoefficient * xValue + theConstant;
+      return `${firstCoefficient}x + ${theConstant} = ${total}<br />Which equation has the same solution as the given equation?<br />A. ${firstCoefficient}x = ${total * theConstant}<br />B. ${firstCoefficient}x = ${total + theConstant}<br />C. ${firstCoefficient}x = ${total - theConstant}<br />D. ${firstCoefficient}x = ${total / theConstant}`;
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const problem = document.querySelectorAll('.problem')[i];
+      problem.innerHTML = createProblem();
+    }
+  </script>
+</body>
+</html>
