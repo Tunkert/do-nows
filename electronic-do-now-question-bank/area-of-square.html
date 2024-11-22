@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of a Square</title>
+    <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="refreshPage();">Refresh problems</button>
+      <div class="row">
+        <p class="problem"></p>
+      </div>
+      <div class="row">
+        <p class="problem"></p>
+      </div>
+      <div class="row">
+        <p class="problem"></p>
+      </div>
+      <div class="row">
+        <p class="problem"></p>
+      </div>
+    </div> 
+    <script>
+      let refreshPage = () => {
+        location.reload();
+      }
+
+      let createNumber = () => {
+        const aNumber = Math.floor(Math.random() * 19) + 4;
+        return aNumber;
+      }
+
+      let createSquareProblem = () => {
+        const side = createNumber();
+        const units = [
+          "inches",
+          "centimeters",
+          "yards",
+          "meters",
+          "miles",
+        ];
+        const theUnit = units[Math.floor(Math.random() * units.length)];
+        return `The area of a square is ${side * side} square ${theUnit}. What is the side length, in ${theUnit}, of this square?`;
+      }
+
+      for (let i = 0; i < 4; i++) {
+        const problem = document.querySelectorAll('.problem')[i];
+        problem.innerHTML = createSquareProblem();
+      }
+    </script>
+  </body>
+</html>
