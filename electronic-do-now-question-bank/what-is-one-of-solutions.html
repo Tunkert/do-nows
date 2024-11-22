@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is one of the solutions?</title>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="refreshPage();">Refresh problems!</button>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+  </div> 
+  <script>
+    let refreshPage = () => {
+      location.reload();
+    }
+
+    let createNumber = () => {
+      let myNumber = (Math.floor(Math.random() * 9) + 2);
+      return myNumber;
+    }
+
+    let createProblem = () => {
+      const a = createNumber();
+      const b = createNumber();
+      // (x - a)(x - b) = x^2 - (a + b)x + ab
+      const middleCoefficient = -1 * (a + b);
+      const lastConstant = a * b;
+      return `What is one of the solutions to the equation:<br />x<sup>2</sup> + ${middleCoefficient}x + ${lastConstant} = 0?`;
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const problem = document.querySelectorAll('.problem')[i];
+      problem.innerHTML = createProblem(); 
+    }
+  </script>
+</body>
+</html>
