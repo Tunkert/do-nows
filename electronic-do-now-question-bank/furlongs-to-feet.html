@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furlongs to feet</title>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="refreshPage()">Refresh problems!</button>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+  </div>
+  <script>
+    let refreshPage = () => {
+      location.reload();
+    }
+
+    let createNumber = () => {
+      const aNumber = Math.floor(Math.random() * 100) + 32;
+      return aNumber;
+    }
+
+    let createFurlongProblem = () => {
+      const furlongNumber = createNumber();
+      return `A distance of ${furlongNumber} furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 3 feet)`;
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const problem = document.querySelectorAll('.problem')[i];
+      problem.innerHTML = createFurlongProblem();
+    }
+  </script>
+</body>
+</html>
