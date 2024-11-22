@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value of p</title>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 200px;
+      border-bottom: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="refreshPage();">Refresh problems</button>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+    <div class="row">
+      <p class="problem"></p>
+    </div>
+  </div> 
+  <script>
+    let refreshPage = () => {
+      location.reload();
+    }
+
+    let createNumber = () => {
+      return ((Math.floor(Math.random() *9) + 1) * 10) + Math.floor(Math.random());
+    }
+
+    let createProblem = () => {
+      const firstCoefficient = createNumber();
+      const constantNumber = createNumber();
+      const pValue = createNumber();
+      const total = firstCoefficient * pValue + constantNumber;
+      return `What value of p satisfies the equation ${firstCoefficient}p + ${constantNumber} = ${total}?`;
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const problem = document.querySelectorAll('.problem')[i];
+      problem.textContent = createProblem();
+    }
+  </script>
+</body>
+</html>
