@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System of Equations, Solve for x</title>
+  <style>
+    .container {
+      margin: 0 0.5in;
+    }
+
+    .row {
+      min-height: 220px;
+      border-bottom: 1px solid #333;
+    }
+
+    ul li {
+      list-style: upper-alpha;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <button onclick="refreshPage()">Refresh problems!</button>
+  <div class="row">
+    <div class="problem"></div>
+  </div>
+  <div class="row">
+    <div class="problem"></div>
+  </div>
+  <div class="row">
+    <div class="problem"></div>
+  </div>
+  <div class="row">
+    <div class="problem"></div>
+  </div>
+</div> 
+<script>
+  let refreshPage = () => {
+    location.reload();
+  }
+
+  let createNumber = () => {
+    const myNumber = Math.floor(Math.random() * 9) + 2;
+    return myNumber;
+  }
+
+  let createSystemOfEquation = () => {
+    let xValue = createNumber();
+    let xConstant = createNumber();
+    let yValue = xConstant * xValue;
+    let xConstantTwo = createNumber();
+    let total = xConstantTwo * xValue + yValue;
+    return `y = ${xConstant}x<br>${xConstantTwo}x + y = ${total}<br><br>The solution to the givne system of equation is (x, y). What is the value of x?<br><ul><li>1</li><li>${xValue - 5}</li><li>${xValue}</li><li>${xValue * 3}</li></ul>`;
+  }
+  
+  for (let i = 0; i < 4; i++) {
+    const problem = document.querySelectorAll('.problem')[i];
+    problem.innerHTML = createSystemOfEquation();
+  }
+</script>
+</body>
+</html>
