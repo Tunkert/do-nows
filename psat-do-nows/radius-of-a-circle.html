@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Radius of a Circle</title>
+	<style type="text/css">
+		.container {
+			margin: 0 0.5in;
+		}
+
+		.row {
+			min-height: 175px;
+			border-bottom: 5px dotted hotpink;
+		}
+
+		.pb {
+			page-break-after: always;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="pb"></div>
+	<div class="solutions">
+		<h2>Solutions</h2>
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</div>
+<script type="text/javascript">
+	let createProblem = (radiusValue, multiplier) => {
+		let largerRadiusValue = radiusValue * multiplier;
+		return `Circle A has a radius of ${radiusValue} and Circle B has a radius of ${largerRadiusValue}. How many times larger is the area of Circle B than Circle A?`;
+	};
+
+	let createSolution = (multiplier) => {
+		return `${multiplier * multiplier}`;
+	}
+
+	for (let i = 0; i < 8; i++) {
+		const problemHeading = document.querySelectorAll('.row h2')[i];
+		const problemParagraph = document.querySelectorAll('.row p')[i];
+		const problemSolution = document.querySelectorAll('ol li')[i];
+		problemHeading.textContent = `Problem ${i + 1}`;
+		let rValue = Math.floor(Math.random() * 5) + 2;
+		let mult = Math.floor(Math.random() * 10) + 2; 
+		problemParagraph.textContent = createProblem(rValue, mult);
+		problemSolution.textContent = createSolution(mult);
+	};
+</script>
+</body>
+</html>
