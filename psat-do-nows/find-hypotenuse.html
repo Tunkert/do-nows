@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Find Hypotenuse</title>
+	<style type="text/css">
+		.container {
+			margin: 0 0.5in;
+		}
+
+		.row {
+			min-height: 175px;
+			border-bottom: 5px dotted hotpink;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+	<div class="row">
+		<h2></h2>
+		<p></p>
+	</div>
+</div>
+<script type="text/javascript">
+	let pythagoreanDoubles = [
+		[3, 4],
+		[5, 12],
+		[8, 15],
+		[7, 24],
+		[20, 21],
+		[12, 35],
+		[9, 40],
+		[28, 45],
+		[11, 60],
+		[16, 63],
+		[33, 56],
+		[48, 55],
+		[13, 84],
+		[36, 77],
+		[39, 80],
+		[65, 72],
+	];
+
+	let createProblem = (idx) => {
+		return `What is the length of the hypotenuse of a right triangle with legs measuring ${pythagoreanDoubles[idx][1]} cm and ${pythagoreanDoubles[idx][0]}?`;
+	}
+
+	for (let i = 0; i < 8; i++) {
+		const problemHeading = document.querySelectorAll('.row h2')[i];
+		const problemParagraph = document.querySelectorAll('.row p')[i];
+		problemHeading.textContent = `Problem ${i + 1}`;
+		let indexVal = Math.floor(Math.random() * pythagoreanDoubles.length);
+		problemParagraph.textContent = createProblem(indexVal);
+	}
+</script>
+</body>
+</html>
