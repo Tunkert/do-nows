@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In a Box of Markers - Ratio Problem</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 175px;
+            border-bottom: 5px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        let createProblem = (ratioOne, ratioTwo, multiplier) => {
+            return `In a box of markers, the ratio of blue markers to green markers is ${ratioOne} to ${ratioTwo}. If there are ${ratioOne * multiplier} blue markers in the box, how many green markers are there?`;
+        }
+
+        let createSolution = (ratioTwo, multiplier) => {
+            return `${ratioTwo * multiplier}`;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const problemHeading = document.querySelectorAll('.row h2')[i];
+            const problemParagraph = document.querySelectorAll('.row p')[i];
+            const solution = document.querySelectorAll('ol li')[i];
+            let rOne = Math.floor(Math.random() * 10) + 2;
+            let rTwo = Math.floor(Math.random() * 10) + 2;
+            while (rOne === rTwo) {
+                rOne = Math.floor(Math.random() * 10) + 2;
+                rTwo = Math.floor(Math.random() * 10) + 2;
+            }
+            let mult = Math.floor(Math.random() * 10) + 5;
+            problemHeading.textContent = `Problem ${i + 1}`;
+            problemParagraph.textContent = createProblem(rOne, rTwo, mult);
+            solution.textContent = createSolution(rTwo, mult);
+        }
+    </script>
+</body>
+
+</html>
