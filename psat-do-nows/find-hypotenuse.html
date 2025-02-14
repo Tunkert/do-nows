@@ -13,6 +13,10 @@
 			min-height: 175px;
 			border-bottom: 5px dotted hotpink;
 		}
+
+		.pb {
+			page-break-after: always;
+		}
 	</style>
 </head>
 <body>
@@ -49,38 +53,58 @@
 		<h2></h2>
 		<p></p>
 	</div>
+	<div class="pb"></div>
+	<div class="solutions">
+		<h2>Solutions</h2>
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
 </div>
 <script type="text/javascript">
-	let pythagoreanDoubles = [
-		[3, 4],
-		[5, 12],
-		[8, 15],
-		[7, 24],
-		[20, 21],
-		[12, 35],
-		[9, 40],
-		[28, 45],
-		[11, 60],
-		[16, 63],
-		[33, 56],
-		[48, 55],
-		[13, 84],
-		[36, 77],
-		[39, 80],
-		[65, 72],
+	let pythagoreanTriples = [
+		[3, 4, 5],
+		[5, 12, 13],
+		[8, 15, 17],
+		[7, 24, 25],
+		[20, 21, 29],
+		[12, 35, 37],
+		[9, 40, 41],
+		[28, 45, 53],
+		[11, 60, 61],
+		[16, 63, 65],
+		[33, 56, 65],
+		[48, 55, 73],
+		[13, 84, 85],
+		[36, 77, 85],
+		[39, 80, 89],
+		[65, 72, 97],
 	];
 
+	let createSolution = (idx) => {
+		return `${pythagoreanTriples[idx][2]}`;
+	};
+
 	let createProblem = (idx) => {
-		return `What is the length of the hypotenuse of a right triangle with legs measuring ${pythagoreanDoubles[idx][1]} cm and ${pythagoreanDoubles[idx][0]}?`;
-	}
+		return `What is the length of the hypotenuse of a right triangle with legs measuring ${pythagoreanTriples[idx][1]} cm and ${pythagoreanTriples[idx][0]}?`;
+	};
 
 	for (let i = 0; i < 8; i++) {
 		const problemHeading = document.querySelectorAll('.row h2')[i];
 		const problemParagraph = document.querySelectorAll('.row p')[i];
+		const solution = document.querySelectorAll('ol li')[i];
 		problemHeading.textContent = `Problem ${i + 1}`;
-		let indexVal = Math.floor(Math.random() * pythagoreanDoubles.length);
+		let indexVal = Math.floor(Math.random() * pythagoreanTriples.length);
 		problemParagraph.textContent = createProblem(indexVal);
-	}
+		solution.textContent = createSolution(indexVal);
+	};
 </script>
 </body>
 </html>
