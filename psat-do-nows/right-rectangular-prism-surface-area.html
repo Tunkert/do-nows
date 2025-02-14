@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Rectangular Prism - Surface Area</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 175px;
+            border-bottom: 3px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="pb"></div>
+    <div class="solutions">
+        <h2>Solutions</h2>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<script>
+    let createNumber = (upperLimit) => {
+        return Math.floor(Math.random() * upperLimit) + 5;
+    }
+
+    let createProblem = (length, width, height) => {
+        return `Find the surface area of a right rectangular prism that has a length of ${length} cm, a height of ${height} cm, and a width of ${width} cm.`;
+    }
+
+    let createSolution = (length, width, height) => {
+        solution = 2 * length * width + 2 * width * length + 2 * length * height;
+        return `${solution} cm<sup>2</sup>`;
+    }
+
+    for (let i = 0; i < 8; i++) {
+        const problemHeading = document.querySelectorAll('.row h2')[i];
+        problemHeading.textContent = `Problem ${i + 1}`;
+        const problem = document.querySelectorAll('.row p')[i];
+        let l = createNumber(20);
+        let w = createNumber(20);
+        let h = createNumber(20);
+        problem.textContent = createProblem(l, w, h);
+        const solution = document.querySelectorAll('ol li')[i];
+        solution.innerHTML = createSolution(l, w, h);
+    }
+</script>
+</body>
+</html>
