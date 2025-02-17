@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems of Equations - Elimination</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 175px;
+            border-bottom: 5px dotted hotpink;
+        }
+
+        .pb {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="pb"></div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <h2></h2>
+            <p></p>
+        </div>
+        <div class="pb"></div>
+        <div class="solutions">
+            <h2>Solutions</h2>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        let createProblem = (c1, c2, c3, xValue, yValue) => {
+            let rightHandSideX = c1 * xValue + c2 * yValue;
+            let rightHandSideY = c3 * xValue - c2 * yValue;
+            let problemString = `Given:<br>
+            ${c1}x + ${c2}y = ${rightHandSideX}<br>
+            ${c3}x - ${c2}y = ${rightHandSideY}<br>
+            What is the solution (x, y) to this system of equations?
+            `;
+            return problemString;
+        }
+
+        let createSolution = (xValue, yValue) => {
+            return `(${xValue}, ${yValue})`;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            const problemHeading = document.querySelectorAll('.row h2')[i];
+            const problemParagraph = document.querySelectorAll('.row p')[i];
+            const problemSolution = document.querySelectorAll('ol li')[i];
+            // label headings
+            problemHeading.textContent = `Problem ${i + 1}`;
+            // create problem variables
+            let cOne = Math.floor(Math.random() * 8) + 2;
+            let cTwo = Math.floor(Math.random() * 8) + 2;
+            let cThree = Math.floor(Math.random() * 8) + 2;
+            let xVal = Math.floor(Math.random() * 8) + 2;
+            let yVal = Math.floor(Math.random() * 8) + 2;
+
+            // create possibility of x and y values being negative
+            let xValueSign = Math.floor(Math.random() * 2);
+            let yValueSign = Math.floor(Math.random() * 2);
+
+            if (xValueSign === 0) xVal *= -1;
+            if (yValueSign === 0) yVal *= -1;
+
+            // create problems
+            problemParagraph.innerHTML = createProblem(cOne, cTwo, cThree, xVal, yVal);
+
+            // create solutions
+            problemSolution.textContent = createSolution(xVal, yVal);
+        }
+    </script>
+</body>
+</html>
