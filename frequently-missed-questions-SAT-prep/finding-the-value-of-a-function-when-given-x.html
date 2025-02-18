@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding the value of a function when given x</title>
+    <style>
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 175px;
+            border-bottom: 5px dotted hotpink;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="row">
+        <h2></h2>
+        <p></p>
+    </div>
+    <div class="pb"></div>
+    <div class="solutions">
+        <h2>Solutions</h2>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<script>
+    let createProblem = (c1, c2, xVal, operation) => {
+        let functionLetters = ['f', 'g', 'h'];
+        let functionLetterSelector = Math.floor(Math.random * functionLetters.length);
+        return `The function ${functionLetters[functionLetterSelector]}(x) is defined by ${functionLetters[functionLetterSelector]}(x) = ${c1}x ${operation} ${c2}. What is the value of ${functionLetters[functionLetterSelector]}(x), when x = ${xVal}?`;
+    }
+
+    let createSolution = (c1, c2, xVal, operation) => {
+        if (operation === '+') {
+            return `${c1 * xVal + c2}`;
+        }
+        return `${c1 * xVal - c2}`;
+    }
+
+    for (let i = 0; i < 8; i++) {
+        const problemHeading = document.querySelectorAll('.row h2')[i];
+        const problemParagraph = document.querySelectorAll('.row p')[i];
+        const problemSolutions = document.querySelectorAll('ol li')[i];
+
+//        fill headings
+        problemHeading.textContent = `Problem ${i + 1}`;
+
+//        create variables for function
+        let cOne = Math.floor(Math.random() * 8) + 2;
+        let cTwo = Math.floor(Math.random() * 8) + 2;
+        let xValue = Math.floor(Math.random() * 8) + 2;
+
+//        add ability for negative coefficients
+        let cOneSign = Math.floor(Math.random() * 2);
+        let cTwoSign = Math.floor(Math.random() * 2);
+        let xValueSign = Math.floor(Math.random() * 2);
+        let op;
+        let opSign = Math.floor(Math.random() * 2);
+
+        if (opSign === 0) {
+            op = '+';
+        } else {
+            op = '-';
+        }
+
+        if (cOneSign === 0) {
+            cOne *= -1;
+        }
+
+        if (cTwoSign === 0) {
+            cTwo *= -1;
+        }
+
+        if (xValueSign === 0) {
+            xValue *= -1;
+        }
+
+//        fill problems
+        problemParagraph.textContent = createProblem(cOne, cTwo, xValue, op);
+
+//        fill solutions
+        problemSolutions.textContent = createSolution(cOne, cTwo,xValue, op);
+    }
+</script>
+</body>
+</html>
