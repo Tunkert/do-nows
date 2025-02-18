@@ -68,7 +68,7 @@
     let createProblem = (c1, c2, xVal, operation) => {
         let functionLetters = ['f', 'g', 'h'];
         let functionLetterSelector = Math.floor(Math.random * functionLetters.length);
-        return `The function ${functionLetters[functionLetterSelector]}(x) is defined by ${functionLetters[functionLetterSelector]}(x) = ${c1}x ${operation} ${c2}. What is the value of ${functionLetters[functionLetterSelector]}(x), when x = ${xVal}?`;
+        return `The function ${functionLetters[functionLetterSelector]}(x) is defined by ${functionLetters[functionLetterSelector]}(x) = ${c1}x ${operation} ${c2}. <br>What is the value of ${functionLetters[functionLetterSelector]}(x), when x = ${xVal}?`;
     }
 
     let createSolution = (c1, c2, xVal, operation) => {
@@ -117,7 +117,7 @@
         }
 
 //        fill problems
-        problemParagraph.textContent = createProblem(cOne, cTwo, xValue, op);
+        problemParagraph.innerHTML = createProblem(cOne, cTwo, xValue, op);
 
 //        fill solutions
         problemSolutions.textContent = createSolution(cOne, cTwo,xValue, op);
