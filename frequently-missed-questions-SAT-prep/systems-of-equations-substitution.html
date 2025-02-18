@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>System of Equations - Substitution </title>
+	<style type="text/css">
+		.container {
+			margin: 0 0.5in;
+		}
+
+		.row {
+			min-height: 175px;
+			border-bottom: 5px dotted hotpink;
+		}
+
+		.pb {
+			page-break-after: always;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="row">
+			<h2></h2>
+			<p></p>
+		</div>
+		<div class="pb"></div>
+		<div class="solutions">
+			<h2>Solutions</h2>
+			<ol>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+	</div>
+	<script>
+		let createProblem = (c1, c2, c3, xVal, yVal) => {
+			let rightHandSide = c1 * xVal + c2 * yVal;
+			let yConstant = yVal - c3 * xVal;
+			return `
+				Given:<br>
+				${c1}x + ${c2}y = ${rightHandSide}<br>
+				y = ${c3}x + ${yConstant}<br>
+				Find the solution (x, y) to the system of equations.
+			`;
+		}
+
+		let createSolution = (xVal, yVal) => {
+			return `(${xVal}, ${yVal})`;
+		}
+
+		for (let i = 0; i < 8; i++) {
+			const problemHeading = document.querySelectorAll('.row h2')[i];
+			problemHeading.textContent = `Problem ${i + 1}`;
+
+			const problemParagraph = document.querySelectorAll('.row p')[i];
+
+			const problemSolution = document.querySelectorAll('ol li')[i];
+
+			// create variables
+			let cOne = Math.floor(Math.random() * 8) + 2;
+			let cTwo = Math.floor(Math.random() * 8) + 2;
+			let cThree = Math.floor(Math.random() * 8) + 2;
+			let xValue = Math.floor(Math.random() * 8) + 2;
+			let yValue = Math.floor(Math.random() * 8) + 2;
+
+			problemParagraph.innerHTML = createProblem(cOne, cTwo, cThree, xValue, yValue);
+			problemSolution.textContent = createSolution(xValue, yValue);
+		}
+	</script>
+</body>
+</html>
